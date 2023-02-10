@@ -1,0 +1,17 @@
+.carousel {
+  height: 400px !important;
+  overflow: hidden;
+}
+.carousel-inner {
+  overflow: visible;
+}
+.carousel-inner img {
+  left: 50%;
+  max-width: none !important;
+  min-height: 400px;
+  min-width: 100%;
+  position: absolute;
+  top: 200px;
+  transform: translate(-50%,-50%);
+  object-fit: contain;
+}
