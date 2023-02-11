@@ -9,28 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Начало главного меню -->
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <img class="bi me-2" width="40" height="32" alt="logo" src="/resources/image/logo.png">
-            <span class="fs-4" style="margin-right: 2.5rem;" >DefaultShop</span>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-white">О нас</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Каталог</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Где нас найти?</a></li>
-            </ul>
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Вход</button>
-              <button type="button" class="btn btn-warning">Регистрация</button>
-            </div>
-          </div>
-        </div>
-      </header>
-      <!-- Конец главного меню -->
+  <?php
+  include ('./elements/header.php');
+  ?>
      
       <div class="container mt-5 text-center">
         <div class="row">
@@ -53,7 +34,7 @@
       <div class="container mt-5"></div>
         <div class="row">
           <div class="col">
-            <p class="fw-bold text-center"  style="font-size: 30px;">Новинки компании</p>
+            <p class="fw-bold text-center" style="font-size: 30px;">Новинки компании</p>
           </div>
         </div>
       </div>
@@ -111,25 +92,10 @@
         </div>
       </div>
       <!-- Конец карусели -->
-
-      <!-- Конец подвала -->
-      <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+      <?php
+        include ('./elements/footer.php');
+      ?>
       
-          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-          </ul>
-        </footer>
-      </div>
-     <!-- Конец подвала -->
 
 <script src="/bootstrap/js/bootstrap.js" ></script>
 </body>
