@@ -72,6 +72,7 @@
                             <div class="btn">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
                                 <button type="button" class="btn btn-sm btn-warning">В корзину</button>
+                                <a href="product_card.php" class="nav-link px-2 text-black">Карточка</a>
                             </div>
                             <small class="text-muted">9 mins</small>
                         </div>
