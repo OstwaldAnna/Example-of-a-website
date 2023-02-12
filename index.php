@@ -31,10 +31,10 @@
         </div>
       </div>
 
-      <div class="container mt-5"></div>
+      <div class="container mt-5 text-center">
         <div class="row">
           <div class="col">
-            <p class="fw-bold text-center" style="font-size: 30px;">Новинки компании</p>
+            <p class="fw-bold" style="font-size: 30px;">Новинки компании</p>
           </div>
         </div>
       </div>

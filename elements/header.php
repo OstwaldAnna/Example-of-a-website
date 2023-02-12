@@ -9,7 +9,7 @@
             <span class="fs-4" style="margin-right: 2.5rem;" >DefaultShop</span>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="./index.php" class="nav-link px-2 text-white">О нас</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Каталог</a></li>
+              <li><a href="./catalog.php" class="nav-link px-2 text-white">Каталог</a></li>
               <li><a href="./adress.php" class="nav-link px-2 text-white">Где нас найти?</a></li>
             </ul>
             <div class="text-end">
