@@ -14,7 +14,9 @@
             </ul>
             <div class="text-end">
               <button type="button" class="btn btn-outline-light me-2">Вход</button>
+              <a href="./registration.php" class="nav-link px-2 text-white">Где нас найти?</a>
               <button type="button" class="btn btn-warning">Регистрация</button>
+              <a href="./registration.php" class="nav-link px-2 text-white">Регистрация</a>
             </div>
           </div>
         </div>
