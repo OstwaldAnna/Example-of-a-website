@@ -24,6 +24,7 @@
             <p class="text-start" style="font-size: 20px;"><b>Вид товара:</b> лучший, красивый, неебабельный, самый крутой товар на свете. Покупайте короче.</p>
             <p class="text-start" style="font-size: 20px;"><b>Цвет товара:</b> Красныо-розовый</p>
             <button type="button" class="btn btn-warning">В корзину</button>
+            <a href="./basket.php" class="nav-link px-2 text-black">В корзину</a>
           </div>
         </div>
     </div>
