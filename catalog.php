@@ -70,9 +70,8 @@
                         <p class="text-start" class="card-text">500</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                <a href="product_card.php" class="btn btn-sm btn-outline-secondary">Подробнее</a>
                                 <button type="button" class="btn btn-sm btn-warning">В корзину</button>
-                                <a href="product_card.php" class="nav-link px-2 text-black">Карточка</a>
                             </div>
                             <small class="text-muted">9 mins</small>
                         </div>

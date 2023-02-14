@@ -4,3 +4,11 @@
   overflow: hidden;
   height:50vh;
 }
+
+.msg{
+  border: 2px solid rgba(177, 40, 40, 0.467);
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
