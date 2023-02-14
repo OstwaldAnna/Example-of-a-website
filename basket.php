@@ -9,29 +9,30 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+<?php
   include ('./elements/header.php');
-    ?>
+?>
     
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">№</th>
+                <th scope="col">Товар</th>
+                <th scope="col">Название товара</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Цена</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
+                <td><img width="100" height="100" alt="logo" src="/resources/image/logo.png"></td>
                 <td>Otto</td>
                 <td>@mdo</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
+                <td><img width="100" height="100" alt="logo" src="/resources/image/logo.png"></td>
                 <td>Thornton</td>
                 <td>@fat</td>
             </tr>
@@ -43,6 +44,9 @@
         </tbody>
     </table>
 
+    <?php
+      include ('./elements/footer.php');
+    ?>
 
 <script src="/bootstrap/js/bootstrap.js" ></script> 
 </body>
