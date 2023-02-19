@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Где нас найти?</title>
 </head>
 <body>
     <?php
