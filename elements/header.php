@@ -8,6 +8,8 @@
           <li><a href="./index.php" class="nav-link px-2 text-white">О нас</a></li>
           <li><a href="./catalog.php" class="nav-link px-2 text-white">Каталог</a></li>
           <li><a href="./adress.php" class="nav-link px-2 text-white">Где нас найти?</a></li>
+          <li><a href="./myorders.php" class="nav-link px-2 text-white"> МОИ Заказы</a></li>
+          <li><a href="./allorders.php" class="nav-link px-2 text-white">ВСЕ Заказы</a></li>
         </ul>
           <div class="text-end">
             <a href="./login.php" class="btn btn-outline-light me-2">Вход</a>
