@@ -62,52 +62,25 @@
     <!-- Начало каталога -->
     <div class="container mt-5 text-center">
         <div class="row">
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="/resources/image/1.jpg" class="d-block w-100" alt="...">
-                    <div class="card-body">
-                        <p class="text-start" class="card-text">Название товара</p>
-                        <p class="text-start" class="card-text">500</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn">
-                                <a href="product_card.php" class="btn btn-sm btn-outline-secondary">Подробнее</a>
-                                <button type="button" class="btn btn-sm btn-warning">В корзину</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                <img src="/resources/image/2.jpg" class="d-block w-100" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            <?php 
+                $result = mysqli_query($connect, "SELECT * FROM Product WHERE Count > 0");
+                while($row = mysqli_fetch_assoc($result)):?>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="/resources/image/1.jpg" class="d-block w-100" alt="...">
+                            <div class="card-body">
+                                <p class="text-start" class="card-text"><?php $row['Name'] ?></p>
+                                <p class="text-start" class="card-text"><?php $row['Price']?> руб.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn">
+                                        <a href="product_card.php" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                        <button type="button" class="btn btn-sm btn-warning">В корзину</button>
+                                    </div>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
-                </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                <img src="/resources/image/3.jpg" class="d-block w-100" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php endwhile;?>
         </div>
     </div>
     <!-- Конец каталога -->
