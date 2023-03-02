@@ -9,6 +9,7 @@
     <title>О нас</title>
 </head>
 <body>
+
   <?php
   include ('./elements/header.php');
   ?>

@@ -17,18 +17,20 @@
         <div class="row">
           <div class="col">
             <p class="fw-bold" style="font-size: 50px;">Все заказы</p>
-            <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Фильтровать по:
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Новые</a></li>
-                        <li><a class="dropdown-item" href="#">Подтвержденные</a></li>
-                        <li><a class="dropdown-item" href="#">Отмененные</a></li>
-                    </ul>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" aria-label="Default select example">
+                        <option selected>Фильтровать по</option>
+                        <option value="1">Новые</option>
+                        <option value="2">Подтвержданные</option>
+                        <option value="3">Отмененные</option>
+                        </select>
+                    </div>
                 </div>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
     
     <table class="table mt-5">
@@ -62,10 +64,10 @@
           <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
         </div>
         <div class="modal-body">
-          <div class="container" style="margin-top: 1rem; padding-left: 20%; padding-right: 20%;">
+          <div class="container" style="margin-top: 1rem;">
             <form>
                   <button type="button" class="btn btn-danger">Отменить заказ</button>
-                  <button type="Button" class="btn btn-sm btn-success" style="margin-top: 1.5rem;">Подтвердить заказ</button>
+                  <button type="Button" class="btn btn-sm btn-success">Подтвердить заказ</button>
             </form>
           </div>
         </div>

@@ -13,8 +13,8 @@
   if ($password === $password_confirm) {
     //con...
   
-    mysqli_query($connect, "INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`, `password_confirm`) 
-       VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password', '$password_confirm')");
+    mysqli_query($connect, "INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
+       VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password')");
         $_SESSION['message'] = 'Регистрация прошла успешно';
         header('Location: ../login.php');
 
