@@ -1,3 +1,6 @@
+<?php
+require_once('vendor/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,36 +54,29 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
           </div>
             <div class="carousel-inner">
-              <div class="carousel-item active" >
-                <img src="/resources/image/1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Метка первого слайда</h5>
+            <?php
+      $count = 0;
+        $product = mysqli_query($connect, "SELECT * FROM products ORDER BY id DESC LIMIT 5");
+        while ($row = mysqli_fetch_assoc($product)):
+            if($count == 0):?>
+                <div class="carousel-item active" data-bs-interval="1000">
+                <a href="product_card.php?id=<?php echo $row['id']?>"><img width="200" height="400" src="resources/image/<?php echo $row['image']?>" class="d-block w-100" alt="..."></a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><?php echo $row['name'] ?></h5>
+                        <p><?php echo $row['about'] ?></p>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="/resources/image/2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Метка второго слайда</h5>
+            <?php endif;?>
+            <?if($count > 0):?>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <a href="product_card.php?id=<?php echo $row['id']?>"><img width="200" height="400" src="resources/image/<?php echo $row['image']?>" class="d-block w-100" alt="..."></a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><?php echo $row['name']?></h5>
+                        <p><?php echo $row['about'] ?></p>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="/resources/image/2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Метка второго слайда</h5>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="/resources/image/3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Метка третьего слайда</h5>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="/resources/image/2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Метка второго слайда</h5>
-                </div>
-              </div>
+            <?php endif;?>
+        <?php $count++;  endwhile;?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,6 +88,7 @@
             </button>
         </div>
       </div>
+      
       <!-- Конец карусели -->
       <?php
         include ('./elements/footer.php');
@@ -101,3 +98,4 @@
 <script src="/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
+`
