@@ -1,5 +1,5 @@
 <?php 
-
+    
     require_once 'connect.php';
 
     if(isset($_SESSION['cart'])):
@@ -29,6 +29,7 @@
         <tr class="fw-bold" style="font-size: 20px;">
             <th scope="row"></th>
             <td colspan="2"></td>
+            <td></td>
             <td>Итоговая цена:</td>
             <td><?php echo $cost?></td>
         </tr>
