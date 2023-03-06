@@ -11,7 +11,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn">
                             <a href="product_card.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-outline-secondary">Подробнее</a>
-                            <a href="./vendor/go_to_cart.php" class="btn btn-warning">В корзину</a>
+                            <a href="./vendor/go_to_cart.php?id=<?php echo $row['id']?>" class="btn btn-warning">В корзину</a>
                         </div>
                     </div>
                 </div>

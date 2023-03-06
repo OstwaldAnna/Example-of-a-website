@@ -2,5 +2,6 @@
 <?php 
 session_start();
 unset($_SESSION['user']);
+unset($_SESSION['cart']);
 header("Location: http://".$_SERVER["SERVER_NAME"]."./index.php");
 ?>

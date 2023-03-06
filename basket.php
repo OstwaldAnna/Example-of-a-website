@@ -12,7 +12,7 @@
 <?php
   include ('./elements/header.php');
 ?>
-
+    
     <div class="mt-5 text-start" style=" margin-left: 3rem">
         <div class="row">
           <div class="col">
@@ -33,7 +33,7 @@
     <table class="table mt-5">
         <thead>
             <tr>
-                <th scope="col">№</th>
+                <th scope="col"></th>
                 <th scope="col">Товар</th>
                 <th scope="col">Название товара</th>
                 <th scope="col">Описание</th>
@@ -41,69 +41,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
-                        <label class="form-check-label" for="same-address">1</label>
-                    </div>
-                </th>
-                
-                <td><img width="100" height="100" alt="logo" src="/resources/image/logo.png"></td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
-                        <label class="form-check-label" for="same-address">2</label>
-                    </div>
-                </th>
-                <td>
-                    <img width="100" height="100" alt="logo" src="/resources/image/logo.png">
-                </td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
-                        <label class="form-check-label" for="same-address">3</label>
-                    </div>
-                </th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-             </tr>
-             <tr>
-                <th scope="row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
-                        <label class="form-check-label" for="same-address">4</label>
-                    </div>
-                </th>
-                <td>
-                    <img width="100" height="100" alt="logo" src="/resources/image/logo.png">
-                </td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-            </tr>
-            <thead>
-                <tr class="fw-bold" style="font-size: 20px;">
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td>Итоговая цена:</td>
-                    <td>Цена</td>
-                </tr>
-             </thead>
+            
+            <?php 
+                include('./vendor/spawn_cart_item.php');
+            ?>
+
         </tbody>
     </table>
-
+    <div class="container text-end">
+        <a class="btn btn-danger" href="create_order.php">Оформить заказ</a>
+    </div>
 
     <?php
       include ('./elements/footer.php');
