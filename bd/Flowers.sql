@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 15 2023 г., 00:19
+-- Время создания: Мар 06 2023 г., 21:27
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -24,6 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `products`
+--
+
+CREATE TABLE `products` (
+  `id` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `about` varchar(100) NOT NULL,
+  `price` int NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `country` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `about`, `price`, `image`, `country`) VALUES
+(1, 'петунья', 'красная', 500, '2.jpg', 'Россия'),
+(2, 'роза', 'розовая', 800, '1.jpg', 'Германия'),
+(3, 'ромашка', 'белая', 300, '3.jpg', 'Чехия'),
+(4, 'гвоздика', 'лиловая', 700, '1.jpg', ''),
+(5, 'сирень', 'фиолетовая', 500, '3.jpg', ''),
+(6, 'яблоня', 'антоновка', 2000, '2.jpg', '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `user`
 --
 
@@ -34,20 +61,29 @@ CREATE TABLE `user` (
   `patronymic` varchar(100) NOT NULL,
   `login` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `password_confirm` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `surname`, `patronymic`, `login`, `email`, `password`, `password_confirm`) VALUES
-(1, 'Ася', 'Оствальд', '55', '123', 'asyakynz@gmail.com', '11', '11');
+INSERT INTO `user` (`id`, `name`, `surname`, `patronymic`, `login`, `email`, `password`) VALUES
+(1, 'Ася', 'Оствальд', '55', '123', 'asyakynz@gmail.com', '11'),
+(2, 'Ася', 'Оствальд', '55', '123', 'asyakynz@gmail.com', '11'),
+(3, 'Ася', 'Оствальд', '111', '123', 'asyakynz@gmail.com', '80963'),
+(4, '1', '1', '1', '1', '1', '1'),
+(5, '1', '1', '1', 'admin', 'ivan@', 'admin22');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `user`
@@ -60,10 +96,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
