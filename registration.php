@@ -55,7 +55,7 @@
             <div class="row mt-3">
             <div class="col">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="same-address">
+                    <input type="checkbox" class="form-check-input" id="same-address" name="check" value="Yes">
                     <label class="form-check-label" for="same-address">Я согласен с условиями пользовательского соглашения</label>
                 </div>
                     <button class="btn btn-primary btn-lg btn-block mt-3" type="submit">Зарегистрироваться</button>

@@ -16,6 +16,6 @@
 
         unset($_SESSION["cart"]);
 
-        header('Location: index.php');
+        header('Location: myorders.php');
     }
   ?>

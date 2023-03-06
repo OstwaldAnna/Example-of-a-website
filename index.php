@@ -88,8 +88,8 @@ require_once('vendor/connect.php');
             </button>
         </div>
       </div>
-      
       <!-- Конец карусели -->
+      
       <?php
         include ('./elements/footer.php');
       ?>

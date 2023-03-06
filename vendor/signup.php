@@ -9,8 +9,9 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
+    $check = $_POST['check'];
 
-  if ($password === $password_confirm) {
+    if ($password === $password_confirm && $check == "Yes") {
     //con...
   
     mysqli_query($connect, "INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
@@ -19,7 +20,7 @@
         header('Location: ../login.php');
 
   }else{
-      $_SESSION['message'] = 'Пароли не совпадают';
+      $_SESSION['message'] = 'Пароли не совпадают или проверьте галочку';
       header('Location: ../registration.php'); 
     }
  ?>

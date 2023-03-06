@@ -12,7 +12,7 @@
                 <tr>
                     <th scope="row">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="same-address">
+                            <input type="checkbox" class="form-check-input" onclick="(el = document.getElementById('qwerty')).checked = !el.checked">
                             <label class="form-check-label" for="same-address"></label>
                         </div>
                     </th>
@@ -21,6 +21,7 @@
                     </td>
                     <td><?php echo $row['name']?></td>
                     <td><?php echo $row['about']?></td>
+                    <td>Здесь должно быть реализовано количество</td>
                     <td><?php echo $row['price']?></td>
                 </tr>
         <?php endwhile; endforeach; endif;?>

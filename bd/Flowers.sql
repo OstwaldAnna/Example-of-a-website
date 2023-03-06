@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 06 2023 г., 21:27
+-- Время создания: Мар 07 2023 г., 00:21
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- База данных: `Flowers`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int NOT NULL,
+  `id_products` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `id_products`) VALUES
+(1, '1;2');
 
 -- --------------------------------------------------------
 
@@ -80,6 +98,12 @@ INSERT INTO `user` (`id`, `name`, `surname`, `patronymic`, `login`, `email`, `pa
 --
 
 --
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `products`
 --
 ALTER TABLE `products`
@@ -94,6 +118,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
