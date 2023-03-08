@@ -14,7 +14,8 @@
             if($fail){
                 $oldArray = $_SESSION['cart'];
                 $newArray = array(
-                    "id" => $_GET['id']
+                    "id" => $_GET['id'],
+                    "quantity" => 1
                 );
                 array_push($oldArray, $newArray);
                 $_SESSION['cart'] = $oldArray;
@@ -22,8 +23,10 @@
         }
         else {
             $array = array(
-                "id" => $_GET['id']
-            );
+                0 => array(
+                    "id" => $_GET['id'],
+                    "quantity" => 1
+            ));
             $_SESSION['cart'] = $array;
         }
 

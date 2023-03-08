@@ -24,48 +24,20 @@
     <table class="table mt-5">
         <thead>
             <tr>
-                <th scope="col">№ заказа</th>
+                <th scope="col"></th>
                 <th scope="col">Дата заказа</th>
-                <th scope="col">Количество товара</th>
+                <th scope="col">Количество позиций</th>
                 <th scope="col">Цена заказа</th>
                 <th scope="col">Статус заказа</th>
                 <th scope="col">Действие</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td><button type="button" class="btn btn-sm btn-warning">Удалить заказ</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-                <td><button type="button" class="btn btn-sm btn-warning">Удалить заказ</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td></td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td><button type="button" class="btn btn-sm btn-warning">Удалить заказ</button></td>
-             </tr>
-             <tr>
-                <th scope="row">4</th>
-                <td></td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-                <td><button type="button" class="btn btn-sm btn-warning">Удалить заказ</button></td>
-            </tr>
-            <thead>
+
+        <?php
+            include ('./vendor/spawn_order_item.php');
+        ?>
+
         </tbody>
     </table>
 

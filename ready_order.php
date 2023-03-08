@@ -32,39 +32,39 @@
             </div>
         </div>
     </div>
-    
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Товар</th>
-                <th scope="col">Название товара</th>
-                <th scope="col">Описание</th>
-                <th scope="col">Количество</th>
-                <th scope="col">Цена</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <?php 
-                include('./vendor/spawn_cart_item.php');
-            ?>
+    <form action="vendor/make_order.php" method="post">
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Товар</th>
+                    <th scope="col">Название товара</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <?php 
+                    include('./vendor/spawn_cart_item.php');
+                ?>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     
-    
-    <div class="container">
-        <div class="col">
-            <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b><input type="text" class="form-control" id="name" name="name" placeholder="Имя" value="" required=""></p>
-            <p class="text-start" style="font-size: 20px;"><b>Почта:</b> <input type="text" class="form-control" id="name" name="name" placeholder="Почта" value="" required=""></p>
-            <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" value="" required=""></p>
-            <p class="text-start" style="font-size: 20px;"><b>Конечная цена:</b> 500р</p>
-                <div class="container text-end">
-                    <a class="btn btn-success" href="ready_order.php">Подтвердите ваш заказ</a>
-                </div>
+        <div class="container">
+            <div class="col">
+                <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b><input type="text" class="form-control" id="name" name="name" placeholder="Имя" value="" required=""></p>
+                <p class="text-start" style="font-size: 20px;"><b>Почта:</b> <input type="text" class="form-control" id="email" name="email" placeholder="Почта" value="" required=""></p>
+                <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон" value="" required=""></p>
+                <p class="text-start" style="font-size: 20px;"><b>Конечная цена:</b> 500р</p>
+                    <div class="container text-end">
+                        <button class="btn btn-success" href="ready_order.php">Подтвердите ваш заказ</button>
+                    </div>
+            </div>
         </div>
-    </div>
+    </form>
 
     <?php
         include ('./elements/footer.php');

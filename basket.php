@@ -29,29 +29,31 @@
             </div>
         </div>
     </div>
-    
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Товар</th>
-                <th scope="col">Название товара</th>
-                <th scope="col">Описание</th>
-                <th scope="col">Количество</th>
-                <th scope="col">Цена</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <?php 
-                include('./vendor/spawn_cart_item.php');
-            ?>
 
-        </tbody>
-    </table>
-    <div class="container text-end">
-        <a class="btn btn-danger" href="ready_order.php">Оформить заказ</a>
-    </div>
+    <form action="vendor/refresh_cart.php" method="post">
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Товар</th>
+                    <th scope="col">Название товара</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <?php 
+                    include('./vendor/spawn_cart_item.php');
+                ?>
+
+            </tbody>
+        </table>
+        <div class="container text-end">
+            <button class="btn btn-danger" href="">Оформить заказ</button>
+        </div>
+    </form>
 
     <?php
       include ('./elements/footer.php');
