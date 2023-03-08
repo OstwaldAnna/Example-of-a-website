@@ -21,7 +21,7 @@
                     </td>
                     <td><?php echo $row['name']?></td>
                     <td><?php echo $row['about']?></td>
-                    <td>Здесь должно быть реализовано количество</td>
+                    <td><input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>"></td>
                     <td><?php echo $row['price']?></td>
                 </tr>
         <?php endwhile; endforeach; endif;?>

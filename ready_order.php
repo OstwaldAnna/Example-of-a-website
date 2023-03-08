@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Корзина</title>
+    <title>Подтверждение заказа</title>
 </head>
 <body>
-<?php
+    <?php
   include ('./elements/header.php');
-?>
-    
+    ?>
+
     <div class="mt-5 text-start" style=" margin-left: 3rem">
         <div class="row">
           <div class="col">
-            <p class="fw-bold" style="font-size: 50px;">Корзина</p>
+            <p class="fw-bold" style="font-size: 50px;">Подтвердите заказ</p>
           </div>
         </div>
         <div class="row">
@@ -49,12 +52,22 @@
 
         </tbody>
     </table>
-    <div class="container text-end">
-        <a class="btn btn-danger" href="ready_order.php">Оформить заказ</a>
+    
+    
+    <div class="container">
+        <div class="col">
+            <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b> Иванова анастасия</p>
+            <p class="text-start" style="font-size: 20px;"><b>Почта:</b> DefaultShap2022@mail.ru</p>
+            <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> +79999999999</p>
+            <p class="text-start" style="font-size: 20px;"><b>Конечная цена:</b> 500р</p>
+                <div class="container text-end">
+                    <a class="btn btn-success" href="ready_order.php">Подтвердите ваш заказ</a>
+                </div>
+        </div>
     </div>
 
     <?php
-      include ('./elements/footer.php');
+        include ('./elements/footer.php');
     ?>
 
 <script src="/bootstrap/js/bootstrap.js" ></script> 
