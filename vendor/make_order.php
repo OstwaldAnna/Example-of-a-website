@@ -16,15 +16,22 @@
     }
 
     $str = "";
-
+    $count = 0;
     foreach($_SESSION['cart'] as $item){
-        $str = $str . $item['id'] . "," . $item['quantity'] . ";";
+        if($count == 0){
+            $str = $str . $item['id'] . "," . $item['quantity'];   
+        }
+        else {
+            $str = $str . ";" . $item['id'] . "," . $item['quantity'];
+        }
+        $count++;
     }
 
     $id_user = $_SESSION['user']['id'];
     $date_now = date("Y-m-d H:i:s");
+    $status = "Ожидает подтверждения";
     mysqli_query($connect, "INSERT INTO `orders` (`id`, `id_user`, `name`, `email`, `phone`, `date`, `status`, `products_info`)
-    VALUES (NULL, '$id_user', '$name', '$email', '$phone', '$date_now', 'Ожидает подтверждения' '$str')");
+    VALUES (NULL, '$id_user', '$name', '$email', '$phone', '$date_now', '$status', '$str')");
 
     unset($_SESSION['cart']);
 
