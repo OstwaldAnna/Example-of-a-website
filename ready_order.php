@@ -56,9 +56,9 @@
     
     <div class="container">
         <div class="col">
-            <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b> Иванова анастасия</p>
-            <p class="text-start" style="font-size: 20px;"><b>Почта:</b> DefaultShap2022@mail.ru</p>
-            <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> +79999999999</p>
+            <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b><input type="text" class="form-control" id="name" name="name" placeholder="Имя" value="" required=""></p>
+            <p class="text-start" style="font-size: 20px;"><b>Почта:</b> <input type="text" class="form-control" id="name" name="name" placeholder="Почта" value="" required=""></p>
+            <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> <input type="text" class="form-control" id="name" name="name" placeholder="Телефон" value="" required=""></p>
             <p class="text-start" style="font-size: 20px;"><b>Конечная цена:</b> 500р</p>
                 <div class="container text-end">
                     <a class="btn btn-success" href="ready_order.php">Подтвердите ваш заказ</a>
