@@ -14,6 +14,28 @@ require_once('vendor/connect.php');
 <body>
 <?php
   include ('./elements/header.php');
+  $query = "SELECT * FROM `products`";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            require_once 'vendor/connect.php';
+            if ($_POST["sortBy"] == "price1") {
+                $query = "SELECT * FROM `products` ORDER BY `price` ASC";
+
+           
+            } elseif ($_POST["sortBy"] == "price2") {
+                $query = "SELECT * FROM `products` ORDER BY `price` DESC";
+
+                
+            }elseif ($_POST["sortBy"] == "Name1") {
+                $query = "SELECT * FROM `products` ORDER BY `name` ASC";
+
+
+            }elseif ($_POST["sortBy"] == "Name2") {
+              $query = "SELECT * FROM `products` ORDER BY `name` DESC";
+          }
+            
+
+            
+        }
   ?>
      
       <div class="container mt-5 text-center">
@@ -28,9 +50,9 @@ require_once('vendor/connect.php');
           </div>
         </div>
         <!-- Начало фильтрации -->
-            <div class="container mt-5">
+        <div class="container mt-5">
                 <div class="row">
-                    <div class="col">
+                    <!-- <div class="col">
                         <select class="form-select" aria-label="Default select example">
                         <option selected>Год производства</option>
                         <option value="1">2000</option>
@@ -44,22 +66,27 @@ require_once('vendor/connect.php');
                         <option value="1">От А до Я</option>
                         <option value="2">От Я до А</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="col">
-                        <select class="form-select" aria-label="Default select example">
-                        <option selected>Цена</option>
-                        <option value="1">Дороже</option>
-                        <option value="2">Дешевле</option>
-                        </select>
+                        <form method="post">
+                            <select name="sortBy" class="form-select" aria-label="Default select example">
+                            <option selected>Сортировать по цене:</option>
+                            <option value="price1">Дешевле</option>
+                            <option value="price2">Дороже</option>
+                            <option value="Name1">Алфавиту от А-Я</option>
+                            <option value="Name2">Алфавиту от Я-А</option>
+                            </select>
+                            <button>Применить</button>
+                        </form>
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                         <select class="form-select" aria-label="Default select example">
                         <option selected>Категории</option>
                         <option value="1">Струнные</option>
                         <option value="2">Клавишные смычковые</option>
                         <option value="3">Прочее</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
             </div>
                 <!-- Конец фильтрации -->
@@ -71,6 +98,7 @@ require_once('vendor/connect.php');
     <div class="container mt-5 text-center">
         <div class="row row-cols-3">
         <?php
+            $_GET['query'] = $query;
             include ('./vendor/get_products.php');
         ?>  
         </div>

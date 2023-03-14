@@ -1,5 +1,7 @@
 <?php 
-    $result = mysqli_query($connect, "SELECT * FROM products");
+require_once 'connect.php';
+$query1 = $_GET['query'];
+    $result = mysqli_query($connect, $query1);
     while($row = mysqli_fetch_assoc($result)):?>
         <div class="col">
             <div class="card mb-4">

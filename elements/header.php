@@ -15,8 +15,10 @@
             if (isset($_SESSION['user'])){
               if($_SESSION['user']['login'] == "admin"){
                 echo "<li><a href=\"./allorders.php\" class=\"nav-link px-2 text-white\">ВСЕ Заказы</a></li>";
+                
               }else{
                 echo "<li><a href=\"./myorders.php\" class=\"nav-link px-2 text-white\">Мои Заказы</a></li>";
+                echo "<a href=\"./profile.php\" class=\"nav-link px-2 text-white\">Профиль</a></li>";
               }
             }
           ?>
