@@ -1,44 +1,35 @@
 <?php
     session_start();
 ?>
-<!-- Начало главного меню -->
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <img class="bi me-2" width="40" height="32" alt="logo" src="/resources/image/logo.png">
-        <span class="fs-4" style="margin-right: 2.5rem;" >DefaultShop</span>
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="./index.php" class="nav-link px-2 text-white">О нас</a></li>
-          <li><a href="./catalog.php" class="nav-link px-2 text-white">Каталог</a></li>
-          <li><a href="./adress.php" class="nav-link px-2 text-white">Где нас найти?</a></li>
-          <?php
-            if (isset($_SESSION['user'])){
-              if($_SESSION['user']['login'] == "admin"){
-                echo "<li><a href=\"./allorders.php\" class=\"nav-link px-2 text-white\">ВСЕ Заказы</a></li>";
-                
-              }else{
-                echo "<li><a href=\"./myorders.php\" class=\"nav-link px-2 text-white\">Мои Заказы</a></li>";
-                echo "<a href=\"./profile.php\" class=\"nav-link px-2 text-white\">Профиль</a></li>";
-              }
-            }
-          ?>
-        </ul>
+<!-- Меню обычного пользователя -->
+  <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+  <img  style="margin: 0.5rem;" class="border border-dark" src="/resources/images/logo.png" height="50" width="50">
+        <p class="fs-4 fw-bold text-black" style="margin-right: 2.5rem;">Music House</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <li><a class="nav-link active" aria-current="page" href="/index.php" class="nav-link px-2 text-white">О нас</a></li>
+        <li><a class="nav-link" href="../pages/catalog.php" class="nav-link px-2 text-white">Каталог</a></li>
+        <li><a class="nav-link" href="../pages/adress.php" class="nav-link px-2 text-white">Где нас найти?</a></li>
         <?php
           if(!isset($_SESSION['user'])){
             echo "<div class=\"text-end\">
-                    <a href=\"./login.php\" class=\"btn btn-outline-light me-2\">Вход</a>
-                    <a href=\"./registration.php\" class=\"btn btn-warning\">Регистрация</a>
+                    <a href=\"../pages/login.php\" style=\"margin: 0.5rem\" class=\"btn btn-outline-secondary\">Вход</a>
+                    <a href=\"../pages/registration.php\" class=\"btn btn-outline-secondary\">Регистрация</a>
                   </div>";
           }else{
             echo "<div class=\"text-end\">
                     <p class=\"fw-bold\">" . $_SESSION['user']['login'] . "</p>
-                    <a href=\"./basket.php\" class=\"btn btn-outline-light me-2\">Корзина</a>
-                    <a href=\"./vendor/logout.php\" class=\"btn btn-warning\">Выйти</a>
+                    <a href=\"../pages/basket.php\" class=\"btn btn-outline-secondary\">Корзина</a>
+                    <a href=\"../my_orders.php\" class=\"btn btn-outline-secondary\">Ваши заказы</a>
+                    <a href=\"../vendor/logout.php\" class=\"btn btn-outline-secondary\">Выйти</a>
                   </div>";
           }
         ?>
       </div>
+    </div>
   </div>
-  
-</header>
-<!-- Конец главного меню -->
+</nav>

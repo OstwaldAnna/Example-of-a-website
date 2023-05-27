@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Hussar";
+  src: url("../resources/fonts/hussar-font/HussarBoldObliqueThree-0ryr.otf");
+}
+
+* {
+  font-family: "Hussar";
+}
+
 #carouselExampleCaptions .carousel-item img {  
   object-fit: fill;
   object-position: center;
@@ -11,4 +20,9 @@
   padding: 5px;
   text-align: center;
   font-weight: bold;
+}
+
+.bg_header {
+  background-color: #1a0a0a;
+  height: auto;
 }

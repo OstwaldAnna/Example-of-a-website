@@ -1,37 +1,24 @@
-<?php
+<?php 
+
+//Добавление товара в корзину
+if(isset($_GET['id'])){
     session_start();
-
-    if(isset($_SESSION['user'])){
-
-        if(isset($_SESSION['cart'])){
-            $fail = true;
-            foreach($_SESSION['cart'] as $product){
-                if($product['id'] == $_GET['id']){
-                    $fail = false;
-                }
-            }
-
-            if($fail){
-                $oldArray = $_SESSION['cart'];
-                $newArray = array(
-                    "id" => $_GET['id'],
-                    "quantity" => 1
-                );
-                array_push($oldArray, $newArray);
-                $_SESSION['cart'] = $oldArray;
-            }
-        }
-        else {
-            $array = array(
-                0 => array(
-                    "id" => $_GET['id'],
-                    "quantity" => 1
-            ));
-            $_SESSION['cart'] = $array;
-        }
-
-        header('Location: ../basket.php'); 
-    }else{
-        header('Location: ../login.php');
+    if(isset($_SESSION['cart'])){
+        $oldarr = $_SESSION['cart'];
+        $newarr = array(
+                "id" => $_GET['id'] 
+            );
+        array_push($oldarr, $newarr);
+        $_SESSION['cart'] = $oldarr;
     }
-?>
+    else {
+        $id = $_GET['id'];
+        $array = array(
+            1 => array(
+                "id" => $id,
+            )
+        );
+        $_SESSION['cart'] = $array;
+    }
+    header('Location: ../pages/basket.php');
+}

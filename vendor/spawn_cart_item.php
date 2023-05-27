@@ -20,7 +20,7 @@
                         </div>
                     </th>
                     <td>
-                        <img width="100" height="100" alt="logo" src="/resources/image/<?php echo $row['image']?>">
+                        <img width="100" height="100" alt="logo" src="/resources/images/<?php echo $row['image']?>.jpeg">
                     </td>
                     <td><?php echo $row['name']?></td>
                     <td><?php echo $row['about']?></td>
