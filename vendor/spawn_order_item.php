@@ -8,7 +8,6 @@
     while($row = mysqli_fetch_assoc($orders)):?>
         <?php
             $position = explode(';', $row['products_info']);
-            var_dump($position);
             foreach($position as $item){
                 $arr = explode(',', $item);
                 array_push($test, $arr);
