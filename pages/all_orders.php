@@ -12,7 +12,7 @@
 
 <body>
   <?php
-  include('./elements/admin_panel.php');
+  include('../elements/admin_panel.php');
   ?>
 
   <div class="mt-5 text-start" style=" margin-left: 3rem">
@@ -82,7 +82,7 @@
 
 
   <?php
-  include('./elements/footer.php');
+  include('../elements/footer.php');
   ?>
 
   <script src="/bootstrap/js/bootstrap.js"></script>

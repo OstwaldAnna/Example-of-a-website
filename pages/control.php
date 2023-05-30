@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    include('./elements/admin_panel.php');
+    include('../elements/admin_panel.php');
     ?>
 
     <div class="container mt-3 text-center">
@@ -69,7 +69,7 @@
 
 
     <?php
-    include('./elements/footer.php');
+    include('../elements/footer.php');
     ?>
 
     <script src="/bootstrap/js/bootstrap.js"></script>

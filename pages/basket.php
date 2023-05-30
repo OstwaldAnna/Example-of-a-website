@@ -13,7 +13,7 @@
   include ('../elements/header.php');
 ?>
     
-    <div class="mt-5 text-start" style=" margin-left: 3rem">
+    <div class="container mt-5 text-start">
         <div class="row">
           <div class="col">
             <p class="fw-bold" style="font-size: 50px;">Корзина</p>
@@ -26,11 +26,10 @@
         </div>
     </div>
 
-    <form method="post">
+    <form method="post" action="../vendor/refresh_cart.php" class="container">
         <table class="table mt-5">
             <thead>
                 <tr>
-                    <th scope="col"></th>
                     <th scope="col">Товар</th>
                     <th scope="col">Название товара</th>
                     <th scope="col">Описание</th>
@@ -41,13 +40,17 @@
             <tbody>
                 
                 <?php 
-                    include('../vendor/spawn_cart_item.php');
+                    require_once '../vendor/render_element.php';
+
+                    $render_class = new RenderElement();
+                    $render_class->renderCartItems();
+                    $render_class->renderTotalPrice();
                 ?>
 
             </tbody>
         </table>
-        <div class="container text-end">
-            <a href="/ready_order.php" class="btn btn-warning">Оформить заказ</a>
+        <div>
+            <button class="btn btn-warning">Оформить заказ</a>
         </div>
     </form>
 

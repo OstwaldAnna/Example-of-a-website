@@ -98,8 +98,10 @@
   <div class="container mt-5 text-center">
     <div class="row row-cols-3">
       <?php
-      $_GET['query'] = $query;
-      include('../elements/get_products.php');
+        require_once '../vendor/render_element.php';
+
+        $render_class = new RenderElement();
+        $render_class->renderCatalogItems($query);
       ?>
     </div>
   </div>

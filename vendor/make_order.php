@@ -35,5 +35,5 @@
 
     unset($_SESSION['cart']);
 
-    header('Location: ../myorders.php')
+    header('Location: ../pages/my_orders.php')
 ?>

@@ -26,3 +26,20 @@
   background-color: #1a0a0a;
   height: auto;
 }
+
+.f20 {
+  font-size: 20px;
+}
+
+.f30 {
+  font-size: 30px;
+}
+
+.f50 {
+  font-size: 50px;
+}
+
+.pad {
+  padding-left: 20%;
+  padding-right: 20%;
+}

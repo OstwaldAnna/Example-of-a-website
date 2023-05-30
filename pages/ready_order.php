@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +12,7 @@ session_start();
 
 <body>
     <?php
-    include('./elements/header.php');
+    include('../elements/header.php');
     ?>
 
     <div class="mt-5 text-start" style=" margin-left: 3rem">
@@ -34,7 +31,7 @@ session_start();
             </div>
         </div>
     </div>
-    <form action="vendor/make_order.php" method="post">
+    <form action="../vendor/make_order.php" method="post">
         <table class="table mt-5">
             <thead>
                 <tr>
@@ -47,29 +44,38 @@ session_start();
                 </tr>
             </thead>
             <tbody>
-
                 <?php
-                include('./vendor/spawn_cart_item.php');
-                ?>
+                    require_once '../vendor/render_element.php';
 
+                    $render_class = new RenderElement();
+                    $render_class->renderCartItems();
+                    $render_class->renderTotalPrice();
+                ?>
             </tbody>
         </table>
 
-        <div class="container">
-            <div class="col">
-                <p class="text-start" style="font-size: 20px;"><b>Ваше имя:</b><input type="text" class="form-control" id="name" name="name" placeholder="Имя" value="" required=""></p>
-                <p class="text-start" style="font-size: 20px;"><b>Почта:</b> <input type="text" class="form-control" id="email" name="email" placeholder="Почта" value="" required=""></p>
-                <p class="text-start" style="font-size: 20px;"><b>Телефон:</b> <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон" value="" required=""></p>
-                <p class="text-start" style="font-size: 20px;"><b>Конечная цена:</b> 500р</p>
-                <div class="container text-end">
-                    <button class="btn btn-success" href="ready_order.php">Подтвердите ваш заказ</button>
+        <div class="container pad">
+            <div class="row">
+                <div class="col">
+                    <h3 class="h5 mb-3 fw-normal">Подвердите пароль</h1>
+                    <div class="form-floating mt-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <label for="floatingPassword">Пароль</label>
+                    </div>
+                    <button class="btn btn-outline-dark me-2 mt-3">Оформить заказ</button>
+                    <?php
+                        if (isset($_SESSION['message'])){
+                            echo '<p class="msg mt-3">' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['message']);
+                    ?>
                 </div>
             </div>
         </div>
     </form>
 
     <?php
-    include('./elements/footer.php');
+    include('../elements/footer.php');
     ?>
 
     <script src="/bootstrap/js/bootstrap.js"></script>

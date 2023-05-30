@@ -10,16 +10,18 @@
 </head>
 <body>
     <?php
-        include ('./elements/header.php');
+        include ('../elements/header.php');
     ?>
 
-<?php
-        include ('./vendor/fill_card.php');
+    <?php
+        require_once '../vendor/render_element.php';
+
+        $render_class = new RenderElement();
+        $render_class->renderProductCard($_GET['id']);
     ?> 
 
-    
     <?php
-        include ('./elements/footer.php');
+        include ('../elements/footer.php');
     ?>
 <script src="/bootstrap/js/bootstrap.js" ></script>    
 </body>

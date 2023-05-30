@@ -1,6 +1,5 @@
   <?php
   session_start();
-  require_once 'connect.php';
 
   $surname = $_POST['surname'];
   $name = $_POST['name'];
@@ -14,9 +13,9 @@
 
   if ($password === $password_confirm && $check == "Yes") {
     //con...
-
-    mysqli_query($connect, "INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
-       VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password')");
+    $db = new Database();
+    $result = $db->query("INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
+                          VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password')");
     $_SESSION['message'] = 'Регистрация прошла успешно';
     header('Location: ../pages/login.php');
   } else {

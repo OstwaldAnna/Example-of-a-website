@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 09 2023 г., 02:22
+-- Время создания: Апр 10 2023 г., 00:17
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -43,8 +43,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `id_user`, `name`, `email`, `phone`, `date`, `status`, `products_info`) VALUES
-(2, 0, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-08', 'Ожидает подтверждения ', '2,5;6,9;'),
-(3, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-08', 'Ожидает подтверждения', '2,7;6,10;');
+(7, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-09', 'Идет подтверждение', '1,15;2,16;3,17'),
+(8, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-09', 'Ожидает подтверждения', ''),
+(9, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-04-10', 'Ожидает подтверждения', '1,5'),
+(10, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-04-10', 'Ожидает подтверждения', '3,5');
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `products`

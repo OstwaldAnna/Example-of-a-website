@@ -6,5 +6,5 @@
         $counter++;
     }
 
-    header('Location: ../ready_order.php'); 
+    header('Location: ../pages/ready_order.php'); 
 ?>

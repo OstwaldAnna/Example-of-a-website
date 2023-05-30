@@ -1,10 +1,25 @@
 <?php
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    error_reporting(E_ERROR | E_PARSE);
+class Database
+{
+    private $connection;
+    // Пример использования
+    private $host = "127.0.0.1";
+    private $username = "root";
+    private $password = "";
+    private $database = "Flowers";
 
-    $connect = mysqli_connect('127.0.0.1', 'root','', 'Flowers');
+    public function __construct()
+    {
+        $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
 
-    if (!$connect){
-        die('Error connect to DataBase');
+        if (!$this->connection){
+            die('Error connect to DataBase');
+        }
     }
+
+    public function query($sql)
+    {
+        return $this->connection->query($sql);
+    }
+}
 ?>
