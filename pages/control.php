@@ -1,3 +1,6 @@
+<?php
+session_start(); if($_SESSION['user']['login'] == "admin"):
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +21,7 @@
     <div class="container mt-3 text-center">
         <div class="row">
             <div class="col">
-                <p class="fw-bold" style="font-size: 30px;">Добавить или удалить товар</p>
+                <p class="fw-bold f30">Добавить или удалить товар</p>
                 <form method="post" action="#">
                     <div class="row g-3">
                         <div class="col-sm-4">
@@ -43,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col mt-3">
-                    <p class="fw-bold" style="font-size: 30px;">Добавить или удалить категорию</p>
+                    <p class="fw-bold f30">Добавить или удалить категорию</p>
                     <form method="post" action="#">
                         <div class="row g-3">
                             <div class="col">
@@ -76,3 +79,7 @@
 </body>
 
 </html>
+<?php
+else:
+    header('Location: ../index.php');
+endif;?>

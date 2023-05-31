@@ -18,7 +18,7 @@
   <div class="container mt-3 text-center">
     <div class="row">
       <div class="col">
-        <p class="fw-bold" style="font-size: 30px;">Товары компании</p>
+        <p class="fw-bold f30">Товары компании</p>
       </div>
     </div>
   </div>

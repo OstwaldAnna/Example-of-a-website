@@ -13,10 +13,10 @@
   include ('../elements/header.php');
 ?>
 
-<div class="mt-5 text-center" style=" margin-left: 3rem">
+<div class="mt-5 text-center m30">
         <div class="row">
           <div class="col">
-            <p class="fw-bold" style="font-size: 50px;">Мои заказы</p>
+            <p class="fw-bold f50">Мои заказы</p>
           </div>
         </div>
     </div>
@@ -25,9 +25,8 @@
         <table class="table mt-5">
             <thead>
                 <tr>
-                    <th scope="col"></th>
+                    <th scope="col">Наименование</th>
                     <th scope="col">Количество</th>
-                    <th scope="col">Названия</th>
                     <th scope="col">Статус</th>
                     <th scope="col">Комментарий</th>
                     <th scope="col"></th>

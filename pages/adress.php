@@ -15,7 +15,7 @@
 
     <div class="container mt-3 text-center">
             <div class="col">
-                <p class="fw-bold" style="font-size: 30px;">Где нас найти?</p>
+                <p class="fw-bold f30">Где нас найти?</p>
             </div>
     </div>
     <div class="container mt-3 text-center">

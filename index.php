@@ -27,12 +27,12 @@ require_once('vendor/connect.php');
     </div>
     <div class="row">
       <div class="col">
-        <p class="fw-bold" style="font-size: 30px;">musichouse</p>
+        <p class="fw-bold f30">musichouse</p>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <p style="font-size: 20px;">Здесь будет девиз компании ы по типу: наш девиз 4 слова - чтоб горела наша школа </p>
+        <p class="f20">Здесь будет девиз компании ы по типу: наш девиз 4 слова - чтоб горела наша школа </p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@ require_once('vendor/connect.php');
   <div class="container mt-5 text-center">
     <div class="row">
       <div class="col">
-        <p class="fw-bold" style="font-size: 30px;">Новинки компании</p>
+        <p class="fw-bold f30">Новинки компании</p>
       </div>
     </div>
   </div>

@@ -15,27 +15,17 @@
     include('../elements/header.php');
     ?>
 
-    <div class="mt-5 text-start" style=" margin-left: 3rem">
+    <div class="container mt-5 text-start">
         <div class="row">
             <div class="col">
-                <p class="fw-bold" style="font-size: 50px;">Подтвердите заказ</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="same-address">
-                    <label class="form-check-label" for="same-address">Выбрать все</label>
-                    <a href="..." style="margin-left: 1rem;">Удалить выбранное</a>
-                </div>
+                <p class="fw-bold f50">Подтвердите заказ</p>
             </div>
         </div>
     </div>
-    <form action="../vendor/make_order.php" method="post">
+    <form action="../vendor/make_order.php" method="post" class="container">
         <table class="table mt-5">
             <thead>
                 <tr>
-                    <th scope="col"></th>
                     <th scope="col">Товар</th>
                     <th scope="col">Название товара</th>
                     <th scope="col">Описание</th>

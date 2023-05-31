@@ -4,8 +4,8 @@
 <!-- Меню обычного пользователя -->
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <img  style="margin: 0.5rem;" class="border border-dark" src="/resources/images/logo.png" height="50" width="50">
-      <p class="fs-4 fw-bold text-black" style="margin-right: 2.5rem;">Music House</p>
+      <img class="border border-dark m05" src="/resources/images/logo.png" height="50" width="50">
+      <p class="fs-4 fw-bold text-black m25">Music House</p>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,7 +18,7 @@
         <?php
           if(!isset($_SESSION['user'])):?>
             <div class="text-end">
-              <a href="../pages/login.php" style="margin: 0.5rem" class="btn btn-outline-secondary">Вход</a>
+              <a href="../pages/login.php" class="btn btn-outline-secondary m05">Вход</a>
               <a href="../pages/registration.php" class="btn btn-outline-secondary">Регистрация</a>
             </div>
           <? else:?>

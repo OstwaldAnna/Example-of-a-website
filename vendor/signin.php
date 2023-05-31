@@ -10,12 +10,15 @@
     if (mysqli_num_rows($result) > 0){
       $user = $result->fetch_assoc();
       $_SESSION['user'] = $user;
-      $_SESSION['message'] = "Ваш пароль настолько красивый, что вы вошли в систему";
       if ($_SESSION['user']['login'] == "admin"){
         header('Location: ../admin.php');
       } else {
         header('Location: ../index.php');
       }
+    }
+    else {
+      $_SESSION['message'] = "Такого пользователя не существует";
+      header('Location: ../pages/login.php');
     }
   ?>
 

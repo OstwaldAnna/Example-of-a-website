@@ -21,7 +21,7 @@ session_start();
     <div class="container mt-3 text-center">
         <div class="row">
             <div class="col">
-                <p class="fw-bold" style="font-size: 30px;">Авторизация</p>
+                <p class="fw-bold f30">Авторизация</p>
                 <!-- Форма авторизации -->
                 <form method="post" action="../vendor/signin.php">
                     <div class="row g-3">
@@ -43,8 +43,8 @@ session_start();
                 unset($_SESSION['message']);
                 ?>
             </div>
-            <div class="col" style="margin-left: 3rem;">
-                <img src="/resources/images/16.jpeg" style="object-fit: none" alt="image" height="700" width="600">
+            <div class="col m30">
+                <img src="/resources/images/16.jpeg" class="img_obj_fit img_h700_w600" alt="image">
             </div>
         </div>
     </div>

@@ -6,7 +6,8 @@ if(isset($_GET['id'])){
     if(isset($_SESSION['cart'])){
         $oldarr = $_SESSION['cart'];
         $newarr = array(
-                "id" => $_GET['id'] 
+                "id" => $_GET['id'],
+                "quantity" => 1
             );
         array_push($oldarr, $newarr);
         $_SESSION['cart'] = $oldarr;
@@ -14,8 +15,9 @@ if(isset($_GET['id'])){
     else {
         $id = $_GET['id'];
         $array = array(
-            1 => array(
+            0 => array(
                 "id" => $id,
+                "quantity" => 1
             )
         );
         $_SESSION['cart'] = $array;

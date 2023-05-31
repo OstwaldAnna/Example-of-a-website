@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 10 2023 г., 00:17
+-- Время создания: Май 31 2023 г., 14:28
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -30,11 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `orders` (
   `id` int NOT NULL,
   `id_user` int NOT NULL,
-  `name` varchar(150) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `phone` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date` date NOT NULL,
   `status` text NOT NULL,
+  `comment` varchar(1000) NOT NULL,
   `products_info` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -42,11 +40,9 @@ CREATE TABLE `orders` (
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id`, `id_user`, `name`, `email`, `phone`, `date`, `status`, `products_info`) VALUES
-(7, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-09', 'Идет подтверждение', '1,15;2,16;3,17'),
-(8, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-03-09', 'Ожидает подтверждения', ''),
-(9, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-04-10', 'Ожидает подтверждения', '1,5'),
-(10, 4, 'Влад', 'vlad.shipilov.felocs@gmail.com', '89204641558', '2023-04-10', 'Ожидает подтверждения', '3,5');
+INSERT INTO `orders` (`id`, `id_user`, `date`, `status`, `comment`, `products_info`) VALUES
+(13, 4, '2023-05-31', 'Подтвержден', '', '2,1'),
+(14, 4, '2023-05-31', 'Новый', '', '1,2;2,3;3,5');
 
 -- --------------------------------------------------------
 
@@ -68,12 +64,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `about`, `price`, `image`, `country`) VALUES
-(1, 'петунья', 'красная', 500, '2.jpg', 'Россия'),
-(2, 'роза', 'розовая', 800, '1.jpg', 'Германия'),
-(3, 'ромашка', 'белая', 300, '3.jpg', 'Чехия'),
-(4, 'гвоздика', 'лиловая', 700, '1.jpg', ''),
-(5, 'сирень', 'фиолетовая', 500, '3.jpg', ''),
-(6, 'яблоня', 'антоновка', 2000, '2.jpg', '');
+(1, 'петунья', 'красная', 500, '2.jpeg', 'Россия'),
+(2, 'роза', 'розовая', 800, '1.jpeg', 'Германия'),
+(3, 'ромашка', 'белая', 300, '3.jpeg', 'Чехия'),
+(4, 'гвоздика', 'лиловая', 700, '1.jpeg', ''),
+(5, 'сирень', 'фиолетовая', 500, '3.jpeg', ''),
+(6, 'яблоня', 'антоновка', 2000, '2.jpeg', '');
 
 -- --------------------------------------------------------
 
@@ -132,7 +128,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `products`

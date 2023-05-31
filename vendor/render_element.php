@@ -14,17 +14,19 @@ class RenderElement
 
     public function renderCartItems()
     {
+        $counter = 0;
         if (isset($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $item) {
                 $product = $this->connect->query("SELECT * FROM products WHERE id = '{$item['id']}'");
                 $row = $product->fetch_assoc();
                 $this->cost += $row['price'];
-                $this->renderCartItem($row, $item['quantity']);
+                $this->renderCartItem($row, $item['quantity'], $counter);
+                $counter++;
             }
         }
     }
 
-    private function renderCartItem($row, $quantity)
+    private function renderCartItem($row, $quantity, $counter)
     {
         ?>
         <tr>
@@ -33,8 +35,7 @@ class RenderElement
             </td>
             <td><?php echo $row['name'] ?></td>
             <td><?php echo $row['about'] ?></td>
-            <td><input type="number" min="1" name="quantity_input_<?php echo $this->numberOfPositions ?>"
-                       value="<?php echo $quantity ?>"></td>
+            <td><input type="number" min="1" name="quantity_input_<?php echo $counter ?>" value="<?php echo $quantity ?>"></td>
             <td><?php echo $row['price'] ?></td>
         </tr>
         <?php
@@ -44,10 +45,9 @@ class RenderElement
     {
         ?>
         <thead>
-        <tr class="fw-bold" style="font-size: 20px;">
+        <tr class="fw-bold f20">
             <th scope="row"></th>
             <td colspan="2"></td>
-            <td></td>
             <td>Итоговая цена:</td>
             <td><?php echo $this->cost ?></td>
         </tr>
@@ -67,7 +67,7 @@ class RenderElement
         ?>
             <div class="col">
                 <div class="card mb-4">
-                    <img style="object-fit: contain" class="border border-dark" src="/resources/images/<?php echo $row['image'] ?>" class="d-block w-100" alt="..." height="300">
+                    <img class="border border-dark img_obj_fit_contain img_h30" src="/resources/images/<?php echo $row['image'] ?>" class="d-block w-100" alt="...">
                     <div class="card-body">
                         <p class="text-start" class="card-text"><?php echo $row['name'] ?></p>
                         <p class="text-start" class="card-text"><?php echo $row['model'] ?></p>
@@ -136,11 +136,11 @@ class RenderElement
                     <img width="800" height="500" alt="map" src="/resources/images/<?php echo  $row['image'] ?>">
                 </div>
                 <div class="col">
-                    <p class="text-start" style="font-size: 30px;"><b><?php echo $row['name'] ?></b></p>
-                    <p class="text-start" style="font-size: 20px;"><b>Цена:</b><?php echo $row['price'] ?></p>
-                    <p class="text-start" style="font-size: 20px;"><b>Страна производитель:</b> <?php echo $row['country'] ?></p>
-                    <p class="text-start" style="font-size: 20px;"><b>Вид товара:</b> <?php echo $row['about'] ?></p>
-                    <p class="text-start" style="font-size: 20px;"><b>Цвет товара:</b> <?php echo $row['about'] ?></p>
+                    <p class="text-start f30"><b><?php echo $row['name'] ?></b></p>
+                    <p class="text-start f20"><b>Цена:</b><?php echo $row['price'] ?></p>
+                    <p class="text-start f20"><b>Страна производитель:</b> <?php echo $row['country'] ?></p>
+                    <p class="text-start f20"><b>Вид товара:</b> <?php echo $row['about'] ?></p>
+                    <p class="text-start f20"><b>Цвет товара:</b> <?php echo $row['about'] ?></p>
                     <?php if (isset($_SESSION["user"])) {
                         echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary text-start">В корзину</a>';
                     } ?>
@@ -156,24 +156,21 @@ class RenderElement
         $db = new Database();
         $result = $db->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
         while($row = mysqli_fetch_assoc($result)){
-            $position = explode(';', $row['products_info']);
-            foreach($position as $item){
-                $arr = explode(',', $item);
-                array_push($test, $arr);
-            }
-            $this->renderOrderItem($row, $position);
+            $products = explode(';', $row['products_info']);
+            $this->renderOrderItem($row, count($products));
         }
     }
 
-    private function renderOrderItem($row, $position){
+    private function renderOrderItem($row, $quantity){
         ?> 
         <tr>
-            <th scope="row"></th>
-            <td><?php echo $row['date']?></td>
-            <td><?php echo count($position)?></td>
-            <td><?php echo $row['date']?></td>
+            <td>Заказ №<?php echo $row['id']?></td>
+            <td><?php echo $quantity?></td>
             <td><?php echo $row['status']?></td>
-            <td><button type="button" class="btn btn-sm btn-warning">Удалить заказ</button></td>
+            <td><?php echo $row['comment']?></td>
+            <?if ($row['status'] == "Новый"):?>
+                <td><a href="../vendor/delete_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить заказ</a></td>
+            <?endif;?>
         </tr>
         <?php
     }
@@ -194,6 +191,31 @@ class RenderElement
                 <p class="card-text">Почта: <?php echo $user['email'] ?></p>
             </div>
         </div>
+        <?php
+    }
+
+    public function renderAllOrdersItems(){
+        session_start();
+        $user_id = $_SESSION['user']['id'];
+        $db = new Database();
+        $result = $db->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
+        while($row = mysqli_fetch_assoc($result)){
+            $products = explode(';', $row['products_info']);
+            $this->renderOrderItem($row, count($products));
+        }
+    }
+
+    private function renderAllOrdersItem($row, $quantity){
+        ?> 
+        <tr>
+            <td>Заказ №<?php echo $row['id']?></td>
+            <td><?php echo $quantity?></td>
+            <td><?php echo $row['status']?></td>
+            <td><?php echo $row['comment']?></td>
+            <?if ($row['status'] == "Новый"):?>
+                <td><a href="../vendor/delete_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить заказ</a></td>
+            <?endif;?>
+        </tr>
         <?php
     }
 }

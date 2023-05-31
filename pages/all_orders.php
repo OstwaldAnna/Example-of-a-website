@@ -1,3 +1,6 @@
+<?php
+session_start(); if($_SESSION['user']['login'] == "admin"):
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +18,10 @@
   include('../elements/admin_panel.php');
   ?>
 
-  <div class="mt-5 text-start" style=" margin-left: 3rem">
+  <div class="mt-5 text-start">
     <div class="row">
       <div class="col">
-        <p class="fw-bold" style="font-size: 50px;">Все заказы</p>
+        <p class="fw-bold f50">Все заказы</p>
         <div class="container mt-5">
           <div class="row">
             <div class="col">
@@ -38,24 +41,25 @@
   <table class="table mt-5">
     <thead>
       <tr>
-        <th scope="col">№ заказа</th>
+        <th scope="col">ID заказа</th>
         <th scope="col">Дата заказа</th>
-        <th scope="col">Количество позиций</th>
-        <th scope="col">Цена заказа</th>
-        <th scope="col">Статус заказа</th>
         <th scope="col">ФИО заказчика</th>
+        <th scope="col">Количество товара</th>
+        <th scope="col">Статус заказа</th>
         <th scope="col">Действие</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td></td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Новый</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registration">Управление заказом</button></td>
+        <td>Дата</td>
+        <td>Фио</td>
+        <td>Количество</td>
+        <td>статус</td>
+        <td>
+          <a type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registration">Управление заказом</a></td>
+          <a type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registration">Удалить</a></td>
+        </td>
       </tr>
       <!-- Modal -->
       <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="registrationLabel" aria-hidden="true">
@@ -66,7 +70,7 @@
               <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
             <div class="modal-body">
-              <div class="container" style="margin-top: 1rem;">
+              <div class="container m10">
                 <form>
                   <button type="button" class="btn btn-danger">Отменить заказ</button>
                   <button type="Button" class="btn btn-sm btn-success">Подтвердить заказ</button>
@@ -89,3 +93,7 @@
 </body>
 
 </html>
+<?php
+else:
+    header('Location: ../index.php');
+endif;?>

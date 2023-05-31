@@ -16,7 +16,7 @@
     <div class="container mt-5 text-start">
         <div class="row">
           <div class="col">
-            <p class="fw-bold" style="font-size: 50px;">Корзина</p>
+            <p class="fw-bold f50">Корзина</p>
           </div>
         </div>
         <div class="row">
