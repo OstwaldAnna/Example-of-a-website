@@ -25,8 +25,5 @@
       $_SESSION['message'] = 'Пароли не совпадают или проверьте галочку';
       header('Location: ../pages/registration.php');
     }
-  } else {
-    $_SESSION['message'] = 'Пользователь с таким логином уже существует';
-      header('Location: ../pages/registration.php');
   }
   ?>

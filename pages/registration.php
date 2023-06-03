@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Регитсрация</title>
+    <title>Регистрация</title>
 </head>
 <body>
 <?php
@@ -21,7 +21,7 @@ include('../elements/header.php');
             <div class="col">
             <p class="fw-bold f30">Регистрация</p>
             <!-- Форма регистрации -->
-            <form class="needs-validation" novalidate method="POST" action="../vendor/signup.php">
+            <form class="needs-validation" id="needs-validation" novalidate method="POST" action="../vendor/signup.php">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Имя</label>
                     <input type="text" class="form-control" name="name" pattern="[А-Яа-яЁё]+" required id="" aria-describedby="">
@@ -45,9 +45,12 @@ include('../elements/header.php');
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Логин</label>
-                    <input type="text" class="form-control" name="login" required id="" pattern="[\x1F-\xBF]*" aria-describedby="">
+                    <input type="text" class="form-control" name="login" required id="login" pattern="[\x1F-\xBF]*" aria-describedby="">
                     <div class="invalid-feedback">
                         Логин должен содержать латинские буквы
+                    </div>
+                    <div class="login-feedback text-danger">
+                        Логин должен быть уникальным
                     </div>
                     <div id="" class="form-text"></div>
                 </div>
@@ -115,12 +118,12 @@ Array.prototype.slice.call(forms).forEach(function (form) {
     } else {
         confirm_password.setCustomValidity("");
     }
-
     form.classList.add('was-validated');
 }, false);
 });
 })();
 </script>
-
+<script src="/js/jquery.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>

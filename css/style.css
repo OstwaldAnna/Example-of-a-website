@@ -76,3 +76,6 @@
 .img_h300 {
   height: 300;
 }
+.login-feedback{
+  display: none;
+}
