@@ -1,5 +1,6 @@
   <?php
   session_start();
+  require_once 'connect.php';
 
   $surname = $_POST['surname'];
   $name = $_POST['name'];
@@ -10,16 +11,22 @@
   $password_confirm = $_POST['password_confirm'];
   $check = $_POST['check'];
 
+  $db = new Database();
+  $check_login = $db->query("SELECT * FROM `user` WHERE `login` = '$login'");
 
-  if ($password === $password_confirm && $check == "Yes") {
-    //con...
-    $db = new Database();
-    $result = $db->query("INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
-                          VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password')");
-    $_SESSION['message'] = 'Регистрация прошла успешно';
-    header('Location: ../pages/login.php');
+  if(mysqli_num_rows($check_login) == 0){
+    if ($password === $password_confirm && $check == "Yes") {
+      $db = new Database();
+      $result = $db->query("INSERT INTO `user` (`id`, `surname`, `name`, `patronymic`, `login`, `email`, `password`) 
+                            VALUES (NULL, '$surname', '$name', '$patronymic', '$login', '$email', '$password')");
+      $_SESSION['message'] = 'Регистрация прошла успешно';
+      header('Location: ../pages/login.php');
+    } else {
+      $_SESSION['message'] = 'Пароли не совпадают или проверьте галочку';
+      header('Location: ../pages/registration.php');
+    }
   } else {
-    $_SESSION['message'] = 'Пароли не совпадают или проверьте галочку';
-    header('Location: ../pages/registration.php');
+    $_SESSION['message'] = 'Пользователь с таким логином уже существует';
+      header('Location: ../pages/registration.php');
   }
   ?>
