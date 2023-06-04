@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Фильтрация -->
   <?php
   $query = "SELECT * FROM `products`";
@@ -98,10 +98,10 @@
   <div class="container mt-5 text-center">
     <div class="row row-cols-3">
       <?php
-        require_once '../vendor/render_element.php';
+      require_once '../vendor/render_element.php';
 
-        $render_class = new RenderElement();
-        $render_class->renderCatalogItems($query);
+      $render_class = new RenderElement();
+      $render_class->renderCatalogItems($query);
       ?>
     </div>
   </div>

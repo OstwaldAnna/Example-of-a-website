@@ -15,19 +15,9 @@ session_start(); if($_SESSION['user']['login'] == "admin"):
 <body>
     
     <?php
-        include('elements/admin_panel.php')
-    ?>
-    <div class="container mt-5">
-    <?php
-        require_once 'vendor/render_element.php';
+        header('Location: ../pages/products_management.php'); 
+    ?>    
 
-        $render_class = new RenderElement();
-        $render_class->renderProfileInfo();
-    ?>
-    </div>
-    <?php
-        include ('elements/footer.php');
-    ?>
 <script src="/bootstrap/js/bootstrap.js"></script>    
 </body>
 </html>

@@ -5,7 +5,6 @@ class RenderElement
 {
     private $connect;
     private $cost = 0;
-    private $countCarousel = 0;
 
     public function __construct()
     {
@@ -56,8 +55,7 @@ class RenderElement
     }
 
     public function renderCatalogItems($query){
-        $db = new Database();
-        $result = $db->query($query);
+        $result = $this->connect->query($query);
         while ($row = mysqli_fetch_assoc($result)){
             $this->renderCatalogItem($row);
         }
@@ -87,8 +85,7 @@ class RenderElement
     }
 
     public function renderCarousel(){
-        $db = new Database();
-        $result = $db->query("SELECT * FROM products ORDER BY id DESC LIMIT 5");
+        $result = $this->connect->query("SELECT * FROM products ORDER BY id DESC LIMIT 5");
         $countCarousel = 0;
         while($row = mysqli_fetch_assoc($result)){
             if($countCarousel == 0){
@@ -125,8 +122,7 @@ class RenderElement
     }
 
     public function renderProductCard($id){
-        $db = new Database();
-        $result = $db->query("SELECT * FROM products WHERE id = '$id'");
+        $result = $this->connect->query("SELECT * FROM products WHERE id = '$id'");
         $row = mysqli_fetch_assoc($result);
 
         ?>
@@ -138,9 +134,10 @@ class RenderElement
                 <div class="col">
                     <p class="text-start f30"><b><?php echo $row['name'] ?></b></p>
                     <p class="text-start f20"><b>Цена:</b><?php echo $row['price'] ?></p>
+                    <p class="text-start f20"><b>Описание:</b><?php echo $row['description'] ?></p>
+                    <p class="text-start f20"><b>Категория:</b><?php echo $row['category'] ?></p>
                     <p class="text-start f20"><b>Страна производитель:</b> <?php echo $row['country'] ?></p>
-                    <p class="text-start f20"><b>Вид товара:</b> <?php echo $row['about'] ?></p>
-                    <p class="text-start f20"><b>Цвет товара:</b> <?php echo $row['about'] ?></p>
+                    <p class="text-start f20"><b>Год производства:</b> <?php echo $row['year'] ?></p>
                     <?php if (isset($_SESSION["user"])) {
                         echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary text-start">В корзину</a>';
                     } ?>
@@ -153,8 +150,7 @@ class RenderElement
     public function renderOrderItems(){
         session_start();
         $user_id = $_SESSION['user']['id'];
-        $db = new Database();
-        $result = $db->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
+        $result = $this->connect->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
         while($row = mysqli_fetch_assoc($result)){
             $products = explode(';', $row['products_info']);
             $this->renderOrderItem($row, count($products));
@@ -195,26 +191,39 @@ class RenderElement
     }
 
     public function renderAllOrdersItems(){
-        session_start();
-        $user_id = $_SESSION['user']['id'];
-        $db = new Database();
-        $result = $db->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
+        $result = $this->connect->query("SELECT * FROM `products`");
         while($row = mysqli_fetch_assoc($result)){
-            $products = explode(';', $row['products_info']);
-            $this->renderOrderItem($row, count($products));
+            $this->renderAllOrdersItem($row);
         }
     }
 
-    private function renderAllOrdersItem($row, $quantity){
+    private function renderAllOrdersItem($row){
         ?> 
         <tr>
-            <td>Заказ №<?php echo $row['id']?></td>
-            <td><?php echo $quantity?></td>
-            <td><?php echo $row['status']?></td>
-            <td><?php echo $row['comment']?></td>
-            <?if ($row['status'] == "Новый"):?>
-                <td><a href="../vendor/delete_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить заказ</a></td>
-            <?endif;?>
+            <td>
+                <img width="100" height="100" alt="logo" src="/resources/images/<?php echo $row['image'] ?>">
+            </td>
+            <td><?php echo $row['name']?></td>
+            <td><?php echo $row['price']?></td>
+            <td><a href="../vendor/delete_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить товар</a></td>
+            <td><a href="../pages/edit_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Изменить товар</a></td>
+        </tr>
+        <?php
+    }
+
+    public function renderAllCategorys(){
+        $result = $this->connect->query("SELECT * FROM `categorys`");
+        while($row = mysqli_fetch_assoc($result)){
+            $this->renderCategory($row);
+        }
+    }
+
+    private function renderCategory($row){
+        ?> 
+        <tr>
+            <td><?php echo $row['name']?></td>
+            <td><a href="../vendor/delete_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить категорию</a></td>
+            <td><a href="../pages/edit_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Изменить категорию</a></td>
         </tr>
         <?php
     }
