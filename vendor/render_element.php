@@ -150,7 +150,7 @@ class RenderElement
     public function renderOrderItems(){
         session_start();
         $user_id = $_SESSION['user']['id'];
-        $result = $this->connect->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id'");
+        $result = $this->connect->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id' ORDER BY `id` ASC");
         while($row = mysqli_fetch_assoc($result)){
             $products = explode(';', $row['products_info']);
             $this->renderOrderItem($row, count($products));
@@ -190,14 +190,14 @@ class RenderElement
         <?php
     }
 
-    public function renderAllOrdersItems(){
+    public function renderAllProductsItems(){
         $result = $this->connect->query("SELECT * FROM `products`");
         while($row = mysqli_fetch_assoc($result)){
-            $this->renderAllOrdersItem($row);
+            $this->renderAllProductsItem($row);
         }
     }
 
-    private function renderAllOrdersItem($row){
+    private function renderAllProductsItem($row){
         ?> 
         <tr>
             <td>
@@ -224,6 +224,32 @@ class RenderElement
             <td><?php echo $row['name']?></td>
             <td><a href="../vendor/delete_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить категорию</a></td>
             <td><a href="../pages/edit_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Изменить категорию</a></td>
+        </tr>
+        <?php
+    }
+
+    public function renderAllOrders($query){
+        $result = $this->connect->query($query);
+            while($row = mysqli_fetch_assoc($result)){
+                $products = explode(';', $row['products_info']);
+                
+                $FIO = $_SESSION['user']['surname'] . " " . $_SESSION['user']['name'] . " " . $_SESSION['user']['patronomyc'];
+                $this->renderOrdersItem($row, $FIO, count($products));
+        }
+    }
+
+    private function renderOrdersItem($row, $FIO, $products){
+        ?> 
+        <tr>
+            <td><?php echo $row['id']?></td>
+            <td><?php echo $row['date']?></td>
+            <td><?php echo $FIO?></td>
+            <td><?php echo $products?></td>
+            <td><?php echo $row['status']?></td>
+            <?php if($row["status"] == "Новый"):?>
+                <td><a href="../pages/cancel_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Отменить</a></td>
+                <td><a href="../vendor/accept_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Подтвердить</a></td>
+            <?php endif;?>
         </tr>
         <?php
     }

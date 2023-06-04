@@ -42,7 +42,7 @@
                     require_once '../vendor/render_element.php';
 
                     $render_class = new RenderElement();
-                    $render_class->renderAllOrdersItems();
+                    $render_class->renderAllProductsItems();
                 ?>
 
             </tbody>

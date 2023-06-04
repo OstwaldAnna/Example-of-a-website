@@ -36,13 +36,11 @@
       $query = "SELECT * FROM `products` ORDER BY `name` ASC";
     } elseif ($_POST["sortBy1"] == "Name2") {
       $query = "SELECT * FROM `products` ORDER BY `name` DESC";
-    } elseif ($_POST["sortBy3"] == "category1") {
-      $query = "SELECT * FROM `products` WHERE `category`='Цветы' ";
-    } elseif ($_POST["sortBy3"] == "category2") {
-      $query = "SELECT * FROM `products` WHERE `category`='Упаковка' ";
-    } elseif ($_POST["sortBy3"] == "category3") {
-      $query = "SELECT * FROM `products` WHERE `category`='Дополнительно' ";
     }
+    if (isset($_POST["sortBy3"]) && $_POST["sortBy3"] != "none") {
+      $category = $_POST['sortBy3'];
+      $query = "SELECT * FROM `products` WHERE `category`='$category'";
+    } 
   }
   ?>
   <!-- Фильтрация -->
@@ -77,10 +75,17 @@
       <div class="col">
         <form method="post">
           <select name="sortBy3" class="form-select" aria-label="Default select example">
-            <option selected>Отфильтровать по категории:</option>
-            <option value="category1">Цветы</option>
-            <option value="category2">Упаковка</option>
-            <option value="category3">Дополнительно</option>
+            <?php
+              require_once '../vendor/connect.php';?>
+
+              <option value="none" selected>Отфильтровать по категории:</option>
+
+              <?php $db = new Database();
+              $result = $db->query("SELECT * FROM `categorys`");
+              
+              while ($row = mysqli_fetch_assoc($result)):?>
+                  <option value="<?php echo $row['name']?>"><?php echo $row['name']?></option>
+            <?php endwhile;?>
           </select>
           <div class="container text-center">
             <button class="btn btn-warning mt-3">Применить</button>
