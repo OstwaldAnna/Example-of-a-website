@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 04 2023 г., 20:18
+-- Время создания: Июн 05 2023 г., 02:43
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -60,8 +60,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `id_user`, `date`, `status`, `comment`, `products_info`) VALUES
-(13, 4, '2023-05-31', 'Подтвержден', '', '2,1'),
-(14, 4, '2023-05-31', 'Новый', '', '1,2;2,3;3,5');
+(13, 4, '2023-05-31', 'Отменен', 'Просто нельзя', '2,1'),
+(14, 4, '2023-05-31', 'Подвержден', '', '1,2;2,3;3,5'),
+(15, 4, '2023-06-05', 'Отменен', 'я так захотел', '7,5');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,7 @@ ALTER TABLE `categorys`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
