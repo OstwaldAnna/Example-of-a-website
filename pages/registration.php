@@ -125,7 +125,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
 });
 })();
 </script>
-<script src="/js/jquery.js"></script>
-<script src="/js/scripts.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/scripts.js"></script>
 </body>
 </html>

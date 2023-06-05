@@ -7,10 +7,10 @@
     $db = new Database();
     $result = $db->query("SELECT * FROM `user` WHERE `login` = '$login'");
     if (mysqli_num_rows($result) === 0){
-        echo json_encode(array('dark' => true));
+        echo json_encode(array('success' => true));
     }
     else{
-        echo json_encode(array('dark' => false));
+        echo json_encode(array('success' => false));
     }
 
 ?>
