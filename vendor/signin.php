@@ -3,7 +3,7 @@
     require_once 'connect.php';
 
     $login = $_POST['login'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $db = new Database();
     $result = $db->query("SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'");

@@ -21,7 +21,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <a href="catalog.php" class="btn btn-warning">Вернуться в каталог</a>
+            <a href="catalog.php" class="btn btn-dark">Вернуться в каталог</a>
           </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
             </tbody>
         </table>
         <div>
-            <button class="btn btn-warning">Оформить заказ</a>
+            <button class="btn btn-dark">Оформить заказ</a>
         </div>
     </form>
 

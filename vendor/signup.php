@@ -7,8 +7,8 @@
   $patronymic = $_POST['patronymic'];
   $login = $_POST['login'];
   $email = $_POST['email'];
-  $password = $_POST['password'];
-  $password_confirm = $_POST['password_confirm'];
+  $password = md5($_POST['password']);
+  $password_confirm = md5($_POST['password_confirm']);
   $check = $_POST['check'];
 
   $db = new Database();

@@ -2,7 +2,7 @@
     require_once 'connect.php';
     session_start();
 
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     // если пароль правильный то формируем заказ и заносим его в бд
     if($password === $_SESSION['user']['password']){
         $counter = 0;

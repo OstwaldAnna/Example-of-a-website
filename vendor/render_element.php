@@ -33,7 +33,7 @@ class RenderElement
                 <img width="100" height="100" alt="logo" src="/resources/images/<?php echo $row['image'] ?>">
             </td>
             <td><?php echo $row['name'] ?></td>
-            <td><?php echo $row['about'] ?></td>
+            <td><?php echo $row['description'] ?></td>
             <td><input type="number" min="1" name="quantity_input_<?php echo $counter ?>" value="<?php echo $quantity ?>"></td>
             <td><?php echo $row['price'] ?></td>
         </tr>
@@ -72,7 +72,7 @@ class RenderElement
                         <p class="text-start" class="card-text"><?php echo $row['price'] ?> руб.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <a href="../pages/product_card.php?id=<?php echo $row['id'] ?>" class="btn btn-success">Подробнее</a>
+                                <a href="../pages/product_card.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Подробнее</a>
                                 <?php if (isset($_SESSION["user"])) {
                                     echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-outline-secondary">В корзину</a>';
                                 } ?>
@@ -129,7 +129,7 @@ class RenderElement
         <div class="container mt-5 text-center">
             <div class="row">
                 <div class="col">
-                    <img width="800" height="500" alt="map" src="/resources/images/<?php echo  $row['image'] ?>">
+                    <img width="800" class="img_obj_fit_contain" height="500" alt="map" src="/resources/images/<?php echo  $row['image'] ?>">
                 </div>
                 <div class="col">
                     <p class="text-start f30"><b><?php echo $row['name'] ?></b></p>
@@ -165,7 +165,7 @@ class RenderElement
             <td><?php echo $row['status']?></td>
             <td><?php echo $row['comment']?></td>
             <?if ($row['status'] == "Новый"):?>
-                <td><a href="../vendor/delete_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить заказ</a></td>
+                <td><a href="../vendor/delete_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Удалить заказ</a></td>
             <?endif;?>
         </tr>
         <?php
@@ -205,8 +205,8 @@ class RenderElement
             </td>
             <td><?php echo $row['name']?></td>
             <td><?php echo $row['price']?></td>
-            <td><a href="../vendor/delete_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить товар</a></td>
-            <td><a href="../pages/edit_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Изменить товар</a></td>
+            <td><a href="../vendor/delete_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Удалить товар</a></td>
+            <td><a href="../pages/edit_product.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Изменить товар</a></td>
         </tr>
         <?php
     }
@@ -222,8 +222,8 @@ class RenderElement
         ?> 
         <tr>
             <td><?php echo $row['name']?></td>
-            <td><a href="../vendor/delete_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Удалить категорию</a></td>
-            <td><a href="../pages/edit_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Изменить категорию</a></td>
+            <td><a href="../vendor/delete_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Удалить категорию</a></td>
+            <td><a href="../pages/edit_category.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Изменить категорию</a></td>
         </tr>
         <?php
     }
@@ -247,8 +247,8 @@ class RenderElement
             <td><?php echo $products?></td>
             <td><?php echo $row['status']?></td>
             <?php if($row["status"] == "Новый"):?>
-                <td><a href="../pages/cancel_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Отменить</a></td>
-                <td><a href="../vendor/accept_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-warning">Подтвердить</a></td>
+                <td><a href="../pages/cancel_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Отменить</a></td>
+                <td><a href="../vendor/accept_order.php?id=<?php echo $row['id']?>" class="btn btn-sm btn-dark">Подтвердить</a></td>
             <?php endif;?>
         </tr>
         <?php

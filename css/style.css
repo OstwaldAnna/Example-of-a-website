@@ -70,7 +70,7 @@
 }
 
 .img_obj_fit_contain {
-  object-fit: contain
+  object-fit: contain;
 }
 
 .img_h300 {

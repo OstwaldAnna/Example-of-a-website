@@ -33,7 +33,7 @@ session_start();
                             <input type="password" class="form-control" name="password" placeholder="Пароль" required="">
                         </div>
                     </div>
-                    <button class="w-50 btn btn-warning mt-3" type="submit">Войти</button>
+                    <button class="w-50 btn btn-dark mt-3" type="submit">Войти</button>
                 </form>
                 <!-- Форма авторизации -->
                 <?php

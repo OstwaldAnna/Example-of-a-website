@@ -25,7 +25,7 @@
 
   <!-- Фильтрация -->
   <?php
-  $query = "SELECT * FROM `products`";
+  $query = "SELECT * FROM `products` WHERE `amount` > 0";
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once '../vendor/connect.php';
     if ($_POST["sortBy"] == "price1") {
@@ -56,7 +56,7 @@
             <option value="price2">Дороже</option>
           </select>
           <div class="container text-center">
-            <button class="btn btn-warning mt-3">Применить</button>
+            <button class="btn btn-dark mt-3">Применить</button>
           </div>
         </form>
       </div>
@@ -68,7 +68,7 @@
             <option value="Name2">Алфавиту от Я-А</option>
           </select>
           <div class="container text-center">
-            <button class="btn btn-warning mt-3">Применить</button>
+            <button class="btn btn-dark mt-3">Применить</button>
           </div>
         </form>
       </div>
@@ -88,7 +88,7 @@
             <?php endwhile;?>
           </select>
           <div class="container text-center">
-            <button class="btn btn-warning mt-3">Применить</button>
+            <button class="btn btn-dark mt-3">Применить</button>
           </div>
         </form>
       </div>

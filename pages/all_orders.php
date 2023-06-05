@@ -49,7 +49,7 @@ if ($_SESSION['user']['login'] == "admin") :
                             <option value="cancel">Отменные</option>  
                           </select>
                           <div class="container text-center">
-                            <button class="btn btn-warning mt-3">Применить</button>
+                            <button class="btn btn-dark mt-3">Применить</button>
                           </div>
                         </form>
                         </div>
