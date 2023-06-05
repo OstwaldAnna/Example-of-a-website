@@ -16,7 +16,7 @@
             <div class="col">
                 <p class="fw-bold f50">Управление товарами</p>
                 <p class="fw-bold f30 mt-3">Добавление товаров</p>
-                <a href="../pages/add_product.php" class="btn btn-outline-secondary">Добавить товар</a>
+                <a href="../pages/add_product.php" class="btn btn-dark">Добавить товар</a>
             </div>
         </div>
         <div class="row">

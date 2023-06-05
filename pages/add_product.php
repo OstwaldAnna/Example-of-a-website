@@ -51,10 +51,14 @@
                 <label for="floatingPassword">Год производства</label>
             </div>
             <div class="form-floating mt-3">
+                <input type="number" class="form-control" id="amound" name="amount" placeholder="Password">
+                <label for="floatingPassword">Количество</label>
+            </div>
+            <div class="form-floating mt-3">
                 <input type="text" class="form-control" id="photo" name="photo" placeholder="Password">
                 <label for="floatingPassword">Фото (путь : 3.jpeg)</label>
             </div>
-            <button class="w-100 btn btn-outline-dark mt-3" >Добавить товар</button>
+            <button class="w-100 btn btn-dark mt-3" >Добавить товар</button>
             <?php
                 if ($_SESSION['message']) {
                     echo '<p class="msg mt-3">' . $_SESSION['message'] . '</p>';

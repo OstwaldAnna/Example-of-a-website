@@ -76,7 +76,7 @@ class RenderElement
                             <div>
                                 <a href="../pages/product_card.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Подробнее</a>
                                 <?php if (isset($_SESSION["user"])) {
-                                    echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-outline-secondary">В корзину</a>';
+                                    echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-outline-dark">В корзину</a>';
                                 } ?>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ class RenderElement
                     <p class="text-start f20"><b>Страна производитель:</b> <?php echo $row['country'] ?></p>
                     <p class="text-start f20"><b>Год производства:</b> <?php echo $row['year'] ?></p>
                     <?php if (isset($_SESSION["user"])) {
-                        echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary text-start">В корзину</a>';
+                        echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-dark">В корзину</a>';
                     } ?>
                 </div>
             </div>
@@ -157,7 +157,7 @@ class RenderElement
     public function renderOrderItems(){
         session_start();
         $user_id = $_SESSION['user']['id'];
-        $result = $this->connect->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id' ORDER BY `id` ASC");
+        $result = $this->connect->query("SELECT * FROM `orders` WHERE `id_user` = '$user_id' ORDER BY `id` DESC");
         while($row = mysqli_fetch_assoc($result)){
             $products = explode(';', $row['products_info']);
             $this->renderOrderItem($row, count($products));

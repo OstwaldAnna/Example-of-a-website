@@ -55,7 +55,7 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <label for="floatingPassword">Пароль</label>
                     </div>
-                    <button class="btn btn-outline-dark me-2 mt-3">Оформить заказ</button>
+                    <button class="btn btn-dark me-2 mt-3">Оформить заказ</button>
                     <?php
                         if (isset($_SESSION['message'])){
                             echo '<p class="msg mt-3">' . $_SESSION['message'] . '</p>';

@@ -12,7 +12,7 @@
       </ul>
 
       <div class="text-end">
-        <a href="../vendor/logout.php" class="btn btn-outline-secondary mt-3">Выйти</a>
+        <a href="../vendor/logout.php" class="btn btn-outline-light mt-3">Выйти</a>
       </div>
     </div>
   </div>

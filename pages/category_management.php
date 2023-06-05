@@ -18,7 +18,7 @@
             <div class="col">
                 <p class="fw-bold f50">Управление категориями</p>
                 <p class="fw-bold f30 mt-3">Добавление категории</p>
-                <a href="../pages/add_category.php" class="btn btn-outline-secondary">Добавить категорию</a>
+                <a href="../pages/add_category.php" class="btn btn-dark">Добавить категорию</a>
             </div>
         </div>
         <div class="row">

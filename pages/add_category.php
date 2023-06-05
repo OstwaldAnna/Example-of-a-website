@@ -22,7 +22,7 @@
                 <label for="floatingInput">Название</label>
             </div>
 
-            <button class="w-100 btn btn-outline-dark mt-3" >Добавить категорию</button>
+            <button class="w-100 btn btn-dark mt-3" >Добавить категорию</button>
             <?php
                 if ($_SESSION['message']) {
                     echo '<p class="msg mt-3">' . $_SESSION['message'] . '</p>';
