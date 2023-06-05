@@ -9,6 +9,7 @@
     <title>Корзина</title>
 </head>
 <body>
+  <!-- Вывод меню пользователя -->
 <?php
   include ('../elements/header.php');
 ?>
@@ -54,6 +55,7 @@
         </div>
     </form>
 
+    <!-- Вывод подвала -->
     <?php
       include ('../elements/footer.php');
     ?>

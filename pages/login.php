@@ -14,6 +14,7 @@ session_start();
 </head>
 
 <body>
+    <!-- Вывод меню пользователя-->
     <?php
     include('../elements/header.php');
     ?>
@@ -49,6 +50,7 @@ session_start();
         </div>
     </div>
 
+    <!-- Вывод повала -->
     <?php
     include('../elements/footer.php');
     ?>

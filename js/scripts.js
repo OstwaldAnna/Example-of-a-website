@@ -1,3 +1,4 @@
+// Проверка на логин
 $(document).ready(function() {
     $('needs-validation').submit(function(e) {
         var login = $('#login').val();

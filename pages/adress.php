@@ -9,6 +9,7 @@
     <title>Где нас найти?</title>
 </head>
 <body>
+    <!-- Вывод меню пользователя -->
     <?php
     include('../elements/header.php');
     ?>
@@ -31,6 +32,7 @@
         </div>
     </div>
 
+    <!-- Вывод подвала -->
     <?php
     include('../elements/footer.php');
     ?> 
