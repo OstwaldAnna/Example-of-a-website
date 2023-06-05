@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    $('#needs-validation').submit(function(e) {
-        e.preventDefault();
+    $('needs-validation').submit(function(e) {
         var login = $('#login').val();
         $.ajax({
             type: "GET",
@@ -11,14 +10,14 @@ $(document).ready(function() {
             success: function(response)
             {
                 var jsonData = JSON.parse(response);
-                console.log(jsonData);
                 if (jsonData.success == false)
                 {
                     $('.login-feedback').show();
+                    e.preventDefault();
                 }
-                else{
-                    $(".login-feedback").css("display", "none"); 
-                    $('#needs-validation').unbind('submit').submit();
+                else {
+                    $(".login-feedback").css("display", "none");
+                    $('needs-validation').submit();
                 }
            }
        });

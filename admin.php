@@ -16,7 +16,7 @@ if ($_SESSION['user']['login'] == "admin") :
 
 <body>
     <?php
-    include('../elements/admin_panel.php');
+    include('elements/admin_panel.php');
     ?>
 
     <?php
@@ -74,7 +74,7 @@ if ($_SESSION['user']['login'] == "admin") :
         <tbody>
             <tr>
                 <?php 
-                    require_once '../vendor/render_element.php';
+                    require_once 'vendor/render_element.php';
 
                     $render_class = new RenderElement();
                     $render_class->renderAllOrders($query);
@@ -85,14 +85,14 @@ if ($_SESSION['user']['login'] == "admin") :
 
 
     <?php
-    include('../elements/footer.php');
+    include('elements/footer.php');
     ?>
 
-    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
 <?php
 else :
-  header('Location: ../index.php');
+  header('Location: index.php');
 endif; ?>
