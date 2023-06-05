@@ -1,3 +1,4 @@
+<!-- Изменение товара, редактирование -->
 <?php
     require_once '../vendor/connect.php';
     

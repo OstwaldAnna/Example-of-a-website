@@ -1,3 +1,4 @@
+<!-- Подтверждение заказа -->
 <?php
     require_once '../vendor/connect.php';
     

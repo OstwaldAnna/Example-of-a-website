@@ -6,9 +6,7 @@
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!--
-        Шапка сайта
-    -->
+    <!--Вывод меню пользователя-->
     <?
         include('../elements/admin_panel.php');
     ?>
@@ -49,9 +47,7 @@
         </table>
     </div>
 
-    <!--
-        Подвал сайта
-    -->
+    <!--Вывод подвала-->
     <?
         include ('../elements/footer.php');
     ?>

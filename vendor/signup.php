@@ -1,7 +1,9 @@
-  <?php
+<!-- Регистрация пользователя -->
+<?php
   session_start();
   require_once 'connect.php';
 
+  // Передача данных в БД
   $surname = $_POST['surname'];
   $name = $_POST['name'];
   $patronymic = $_POST['patronymic'];

@@ -9,6 +9,7 @@
     <title>Карточка товара</title>
 </head>
 <body>
+    <!-- Вывод меню пользователя -->
     <?php
         include ('../elements/header.php');
     ?>
@@ -20,6 +21,7 @@
         $render_class->renderProductCard($_GET['id']);
     ?> 
 
+<!-- Вывод подвала -->
     <?php
         include ('../elements/footer.php');
     ?>

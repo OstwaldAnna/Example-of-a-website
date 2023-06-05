@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Вывод меню пользователя -->
     <?php
     include('../elements/header.php');
     ?>
@@ -22,7 +23,9 @@
             </div>
         </div>
     </div>
+    
     <form action="../vendor/make_order.php" method="post" class="container">
+        <!-- Таблица подтверждения заказа -->
         <table class="table mt-5">
             <thead>
                 <tr>
@@ -43,7 +46,7 @@
                 ?>
             </tbody>
         </table>
-
+        <!-- Подтверждение пароля -->
         <div class="container pad">
             <div class="row">
                 <div class="col">
@@ -64,6 +67,7 @@
         </div>
     </form>
 
+    <!-- Вывод подвала -->
     <?php
     include('../elements/footer.php');
     ?>

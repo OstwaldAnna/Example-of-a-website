@@ -1,3 +1,4 @@
+<!-- Удаление товара -->
 <?php
     require_once '../vendor/connect.php';
     

@@ -6,12 +6,12 @@ class RenderElement
     private $connect;
     private $cost = 0;
 
-    public function __construct()
+    public function __construct() //Подключается к БД
     {
         $this->connect = new Database();
     }
 
-    public function renderCartItems()
+    public function renderCartItems() //Вывод корзины, всех элементов
     {
         $counter = 0;
         if (isset($_SESSION['cart'])) {
@@ -25,7 +25,7 @@ class RenderElement
         }
     }
 
-    private function renderCartItem($row, $quantity, $counter)
+    private function renderCartItem($row, $quantity, $counter) //Вывод корзины, элемента
     {
         ?>
         <tr>
@@ -40,7 +40,7 @@ class RenderElement
         <?php
     }
 
-    public function renderTotalPrice()
+    public function renderTotalPrice() //Вывод итоговой цены
     {
         ?>
         <thead>
@@ -54,6 +54,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод всего каталога
     public function renderCatalogItems($query){
         $result = $this->connect->query($query);
         while ($row = mysqli_fetch_assoc($result)){
@@ -61,6 +62,7 @@ class RenderElement
         }
     }
 
+    //Вывод каждого элемента каталога
     private function renderCatalogItem($row){
         ?>
             <div class="col">
@@ -84,6 +86,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод карусели
     public function renderCarousel(){
         $result = $this->connect->query("SELECT * FROM products ORDER BY id DESC LIMIT 5");
         $countCarousel = 0;
@@ -97,6 +100,7 @@ class RenderElement
         }
     }
 
+    //Вывод первого элемента карусели
     private function renderActiveCarouselItem($row){
         ?>
         <div class="carousel-item active" data-bs-interval="1000">
@@ -109,6 +113,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод остальных элементов карусели
     private function renderUsealCarouselItem($row){
         ?>
             <div class="carousel-item" data-bs-interval="1000">
@@ -121,6 +126,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод карточки товара
     public function renderProductCard($id){
         $result = $this->connect->query("SELECT * FROM products WHERE id = '$id'");
         $row = mysqli_fetch_assoc($result);
@@ -147,6 +153,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод всех элементов заказа
     public function renderOrderItems(){
         session_start();
         $user_id = $_SESSION['user']['id'];
@@ -157,6 +164,7 @@ class RenderElement
         }
     }
 
+    //Вывод элемента заказа
     private function renderOrderItem($row, $quantity){
         ?> 
         <tr>
@@ -171,6 +179,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод информации о пользователе
     public function renderProfileInfo(){
         session_start();
         $user = $_SESSION['user'];?>
@@ -190,6 +199,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод всех товаров
     public function renderAllProductsItems(){
         $result = $this->connect->query("SELECT * FROM `products`");
         while($row = mysqli_fetch_assoc($result)){
@@ -197,6 +207,7 @@ class RenderElement
         }
     }
 
+    //Вывод каждого товара
     private function renderAllProductsItem($row){
         ?> 
         <tr>
@@ -211,6 +222,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод всех категорий (для управления)
     public function renderAllCategorys(){
         $result = $this->connect->query("SELECT * FROM `categorys`");
         while($row = mysqli_fetch_assoc($result)){
@@ -218,6 +230,7 @@ class RenderElement
         }
     }
 
+    //Вывод каждой категории (для управления)
     private function renderCategory($row){
         ?> 
         <tr>
@@ -228,6 +241,7 @@ class RenderElement
         <?php
     }
 
+    //Вывод всех заказов (для управления)
     public function renderAllOrders($query){
         $result = $this->connect->query($query);
             while($row = mysqli_fetch_assoc($result)){
@@ -238,6 +252,7 @@ class RenderElement
         }
     }
 
+    //Вывод каждого заказа (для управления)
     private function renderOrdersItem($row, $FIO, $products){
         ?> 
         <tr>

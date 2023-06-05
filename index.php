@@ -15,6 +15,7 @@ require_once('vendor/connect.php');
 
 <body>
 
+<!-- Вывод меню пользователя -->
   <?php
   include('./elements/header.php');
   ?>
@@ -74,6 +75,7 @@ require_once('vendor/connect.php');
     </div>
   </div>
 
+  <!-- Вывод подвала -->
   <?php
   include('./elements/footer.php');
   ?>
@@ -81,6 +83,4 @@ require_once('vendor/connect.php');
 
   <script src="/bootstrap/js/bootstrap.js"></script>
 </body>
-
 </html>
-`

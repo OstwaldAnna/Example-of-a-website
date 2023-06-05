@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!-- Вывод меню пользователя -->
     <?php
         include('../elements/header.php');
     ?>
@@ -21,6 +21,7 @@
         $render_class->renderProfileInfo();
     ?>
     </div>
+    <!-- Вывод подвала -->
     <?php
         include('../elements/footer.php');
     ?>

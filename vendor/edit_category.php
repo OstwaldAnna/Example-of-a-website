@@ -1,3 +1,4 @@
+<!-- Редактирование категории -->
 <?php
     require_once '../vendor/connect.php';
     
