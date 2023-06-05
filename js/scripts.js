@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#needs-validation').submit(function(e) {
+        e.preventDefault();
         var login = $('#login').val();
         $.ajax({
             type: "GET",
@@ -14,10 +15,10 @@ $(document).ready(function() {
                 if (jsonData.success == false)
                 {
                     $('.login-feedback').show();
-                    e.preventDefault();
                 }
                 else{
                     $(".login-feedback").css("display", "none"); 
+                    $('#needs-validation').unbind('submit').submit();
                 }
            }
        });
