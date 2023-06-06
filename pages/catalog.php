@@ -57,7 +57,7 @@
             <option value="price2">Дороже</option>
           </select>
           <div class="container text-center">
-            <button class="btn btn-dark mt-3">Применить</button>
+            <button class="btn btn-dark mt-3 mb-3">Применить</button>
           </div>
         </form>
       </div>
@@ -69,7 +69,7 @@
             <option value="Name2">Алфавиту от Я-А</option>
           </select>
           <div class="container text-center">
-            <button class="btn btn-dark mt-3">Применить</button>
+            <button class="btn btn-dark mt-3 mb-3">Применить</button>
           </div>
         </form>
       </div>
@@ -89,7 +89,7 @@
             <?php endwhile;?>
           </select>
           <div class="container text-center">
-            <button class="btn btn-dark mt-3">Применить</button>
+            <button class="btn btn-dark mt-3 mb-3">Применить</button>
           </div>
         </form>
       </div>
@@ -102,7 +102,7 @@
 
   <!-- Начало меню товаров -->
   <div class="container mt-5 text-center">
-    <div class="row row-cols-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
       <?php
       require_once '../vendor/render_element.php';
 

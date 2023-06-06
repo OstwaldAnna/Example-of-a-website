@@ -66,15 +66,15 @@ class RenderElement
     private function renderCatalogItem($row){
         ?>
             <div class="col">
-                <div class="card mb-4">
-                    <img class="border border-dark img_obj_fit_contain img_h30" src="/resources/images/<?php echo $row['image'] ?>" class="d-block w-100" alt="...">
+                <div class="card mb-4 w-100">
+                    <img class="border border-dark " src="/resources/images/<?php echo $row['image'] ?>" alt="...">
                     <div class="card-body">
                         <p class="text-start" class="card-text"><?php echo $row['name'] ?></p>
                         <p class="text-start" class="card-text"><?php echo $row['model'] ?></p>
                         <p class="text-start" class="card-text"><?php echo $row['price'] ?> руб.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <a href="../pages/product_card.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Подробнее</a>
+                                <a href="../pages/product_card.php?id=<?php echo $row['id'] ?>" class="btn btn-dark w-100">Подробнее</a>
                                 <?php if (isset($_SESSION["user"])) {
                                     echo '<a href="/vendor/go_to_cart.php?id=' . $row['id'] . '" class="btn btn-outline-dark">В корзину</a>';
                                 } ?>
@@ -103,7 +103,7 @@ class RenderElement
     //Вывод первого элемента карусели
     private function renderActiveCarouselItem($row){
         ?>
-        <div class="carousel-item active" data-bs-interval="1000">
+        <div class="carousel-item active" data-bs-interval="5000">
         <a href="pages/product_card.php?id=<?php echo $row['id']?>"><img  class="border border-dark " src="resources/images/<?php echo $row['image']?>"  class="d-block w-100" alt="..."></a>
           <div class="carousel-caption d-none d-md-block">
             <h5><?php echo $row['name'] ?></h5>
@@ -116,7 +116,7 @@ class RenderElement
     //Вывод остальных элементов карусели
     private function renderUsealCarouselItem($row){
         ?>
-            <div class="carousel-item" data-bs-interval="1000">
+            <div class="carousel-item" data-bs-interval="5000">
                 <a href="pages/product_card.php?id=<?php echo $row['id']?>"><img  class="border border-dark  " src="resources/images/<?php echo $row['image']?>"  class="d-block w-100" alt="..."></a>
                 <div class="carousel-caption d-none d-md-block">
                     <h5><?php echo $row['name']?></h5>

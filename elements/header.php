@@ -14,7 +14,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <li><a href="/index.php" aria-current="page" class="nav-link active">О нас</a></li>
+          <li><a href="/index.php" aria-current="page" class="nav-link">О нас</a></li>
           <li><a href="../pages/catalog.php" class="nav-link">Каталог</a></li>
           <li><a href="../pages/adress.php" class="nav-link">Где нас найти?</a></li>
         </div>

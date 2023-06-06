@@ -70,12 +70,19 @@
 }
 
 .img_obj_fit_contain {
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .img_h300 {
   height: 300;
 }
+
 .login-feedback{
   display: none;
+}
+
+.adress {
+  width: 90%; 
+  height: 300px; 
+  object-fit: contain;
 }
