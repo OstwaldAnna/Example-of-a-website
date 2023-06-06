@@ -80,7 +80,7 @@ include('../elements/header.php');
                     <input type="checkbox" class="form-check-input" required id="exampleCheck1" value="Yes" name="check">
                     <label class="form-check-label" for="exampleCheck1" >Согласен с правилами регистрации</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>    
+                <button class="btn btn-primary" id="btn_reg">Зарегистрироваться</button>
             </form>
             <?php
                 if ($_SESSION['message']) {

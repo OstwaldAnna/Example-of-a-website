@@ -1,7 +1,7 @@
-<!-- Подключение к БД -->
 <?php
 class Database
 {
+    //Подключение к БД
     private $connection;
     // Пример использования
     private $host = "127.0.0.1";

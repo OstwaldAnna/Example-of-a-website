@@ -1,6 +1,7 @@
 // Проверка на логин
 $(document).ready(function() {
-    $('needs-validation').submit(function(e) {
+    $('#btn_reg').on('click', function(e) {
+        e.preventDefault();
         var login = $('#login').val();
         $.ajax({
             type: "GET",
@@ -10,15 +11,16 @@ $(document).ready(function() {
             },
             success: function(response)
             {
+                console.log(response);
                 var jsonData = JSON.parse(response);
+                console.log(jsonData);
                 if (jsonData.success == false)
                 {
                     $('.login-feedback').show();
-                    e.preventDefault();
                 }
                 else {
                     $(".login-feedback").css("display", "none");
-                    $('needs-validation').submit();
+                    $('#needs-validation').submit();
                 }
            }
        });
