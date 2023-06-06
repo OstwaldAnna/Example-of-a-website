@@ -1,4 +1,4 @@
-// Проверка на логин
+
 $(document).ready(function() {
     $('#btn_reg').on('click', function(e) {
         e.preventDefault();

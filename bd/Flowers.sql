@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 05 2023 г., 02:43
+-- Время создания: Июн 07 2023 г., 02:01
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- База данных: `Flowers`
 --
-CREATE DATABASE `Flowers`;
+
 -- --------------------------------------------------------
 
 --
@@ -62,7 +62,9 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `id_user`, `date`, `status`, `comment`, `products_info`) VALUES
 (13, 4, '2023-05-31', 'Отменен', 'Просто нельзя', '2,1'),
 (14, 4, '2023-05-31', 'Подвержден', '', '1,2;2,3;3,5'),
-(15, 4, '2023-06-05', 'Отменен', 'я так захотел', '7,5');
+(15, 4, '2023-06-05', 'Отменен', 'я так захотел', '7,5'),
+(16, 8, '2023-06-05', 'Новый', '', '9,1'),
+(17, 8, '2023-06-05', 'Новый', '', '9,1;9,1');
 
 -- --------------------------------------------------------
 
@@ -78,6 +80,7 @@ CREATE TABLE `products` (
   `category` varchar(150) NOT NULL,
   `country` varchar(150) NOT NULL,
   `year` int NOT NULL,
+  `amount` int NOT NULL,
   `image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -85,9 +88,14 @@ CREATE TABLE `products` (
 -- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `description`, `category`, `country`, `year`, `image`) VALUES
-(7, 'Гитара', 500, 'Крутая гитара', 'Струнные', 'США', 2002, '1.jpeg'),
-(8, 'Пианино', 56000, 'Крутое пианино', 'Клавишные ', 'Израиль', 2015, '6.jpeg');
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `category`, `country`, `year`, `amount`, `image`) VALUES
+(9, 'Гитара', 15000, 'Крутая гитара', 'Струнные', 'Россия', 2019, 500, '1.jpeg'),
+(10, 'Гитара 2', 50000, 'Крутая гитара 2', 'Струнные', 'Израиль', 2023, 0, '2.jpeg'),
+(11, 'Крутая гитара 3', 50010, 'Крутая гитара 3', 'Струнные', 'США', 2018, 302, '3.jpeg'),
+(12, 'Пианино', 15000, 'Крутое пианино', 'Клавишные ', 'Мадагаскар', 1991, 140, '6.jpeg'),
+(13, 'Крутое пианино', 11202352, 'Крутое пианино 2', 'Клавишные ', 'Нигер', 1986, 18235, '18.png'),
+(14, 'Крутое пианино 3', 2141241, 'Крутое пианино 3', 'Клавишные ', 'Израиль', 1917, 1421, '6.jpeg'),
+(15, 'Акустическая гитара', 0, 'Крутая акустическая гитара', 'Струнные', 'Франция', 1856, 234523, '14.jpeg');
 
 -- --------------------------------------------------------
 
@@ -110,12 +118,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `surname`, `patronymic`, `login`, `email`, `password`) VALUES
-(1, 'Ася', 'Оствальд', '55', '123', 'asyakynz@gmail.com', '11'),
-(2, 'Ася', 'Оствальд', '55', '123', 'asyakynz@gmail.com', '11'),
-(3, 'Ася', 'Оствальд', '11', '123', 'asyakynz@gmail.com', '80963'),
-(4, '1', '1', '1', '1', '1', '1'),
-(5, '1', '1', '1', 'admin', 'ivan@', 'admin22'),
-(6, 'Влад', 'Шипилов', 'Алексеевич', 'felocS', 'vlad.shipilov.felocs@gmail.com', '5');
+(7, 'Админ', 'Админ', 'Админ', 'admin', 'admin@admin.admin', '1341215dbe9acab4361fd6417b2b11bc'),
+(9, 'п', 'п', 'g', '1', 'g@g.ru', 'c4ca4238a0b923820dcc509a6f75849b');
 
 --
 -- Индексы сохранённых таблиц
@@ -159,19 +163,19 @@ ALTER TABLE `categorys`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
